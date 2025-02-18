@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "@fontsource-variable/eb-garamond";
+@import '@fontsource-variable/inter';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-garamond: 'EB Garamond Variable', serif;
+  --font-inter: 'Inter Variable', sans-serif;
+}

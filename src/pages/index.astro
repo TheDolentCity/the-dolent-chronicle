@@ -1,0 +1,54 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import Prose from "../components/Prose.astro";
+
+const posts = (await getCollection("posts")).sort(
+	(a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={"The Dolent Chronicle"} description={""} />
+	</head>
+	<body
+		class="font-inter overflow-y-scroll bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400"
+	>
+		<main class="w-full min-h-[100svh]">
+			<section class="max-w-[64rem] mx-auto py-16">
+				<Prose>
+					<h1 class="!mb-4 text-2xl lg:text-5xl tracking-tight font-normal">
+						The Dolent Chronicle
+					</h1>
+					<!-- <p class="!mt-0 lg:!mt-6 text-lg lg:text-2xl leading-normal">
+						{description}
+					</p> -->
+					<hr />
+					<ul class="not-prose">
+						{
+							posts.map((post) => (
+								<li>
+									<a
+										href={`/posts/${post.id}/`}
+										class="flex px-2 py-2 justify-between text-base rounded hover:bg-zinc-400 dark:hover:bg-zinc-900"
+									>
+										<h4 class="title">{post.data.title}</h4>
+										<p class="date">
+											<FormattedDate date={post.data.published} />
+										</p>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</Prose>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

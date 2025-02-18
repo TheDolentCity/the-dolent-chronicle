@@ -1,0 +1,24 @@
+---
+import clsx from "clsx";
+---
+
+<div
+	class={clsx(
+		"mx-auto",
+		"prose dark:prose-invert lg:prose-lg",
+		"prose-headings:font-garamond prose-headings:font-normal prose-headings:text-zinc-800 dark:prose-headings:text-zinc-200",
+		"prose-h1:tracking-tight",
+		"prose-h2:relative prose-h2:after:content-[''] after:prose-h2:h-[2px] after:prose-h2:absolute after:prose-h2:left-0 after:prose-h2:right-0 after:prose-h2:-bottom-2 after:prose-h2:bg-red-400",
+		"prose-h3:relative prose-h3:after:content-[''] after:prose-h3:h-[2px] after:prose-h3:absolute after:prose-h3:left-0 after:prose-h3:right-0 after:prose-h3:-bottom-2 after:prose-h3:bg-red-400",
+		"prose-h4:mb-0",
+		"prose-p:leading-normal prose-p:text-zinc-600 dark:prose-p:text-zinc-400",
+		"prose-li:leading-normal prose-li:my-1 prose-li:text-zinc-600 dark:prose-li:text-zinc-400 prose-li:marker:text-zinc-600 dark:prose-li:marker:text-zinc-400",
+		"prose-table:border-collapse prose-table:text-lg",
+		"odd:prose-tr:bg-zinc-100 dark:odd:prose-tr:bg-zinc-900",
+		"prose-th:px-2 prose-th:py-1 prose-th:border-2",
+		"prose-th:text-zinc-200 dark:prose-th:text-red-950 prose-th:bg-zinc-900 prose-th:border-zinc-900 dark:prose-th:bg-red-300 dark:prose-th:border-red-300",
+		"prose-td:px-2 prose-td:py-1 prose-td:border-2 prose-td:border-zinc-300 dark:prose-td:border-zinc-800"
+	)}
+>
+	<slot />
+</div>

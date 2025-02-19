@@ -3,6 +3,7 @@ title: On Railroading
 description: A familiar fiction, expressed as an RPG session.
 published: Nov 10 2023
 image: /blog-placeholder-1.jpg
+tags: [RPG, railroading, referee, fiction]
 ---
 
 _This article was originally published on SubStack, but it has been republished here as this site will serve as the long term record for my thoughts, for good or ill._

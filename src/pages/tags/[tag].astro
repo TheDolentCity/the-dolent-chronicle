@@ -1,0 +1,92 @@
+---
+import { getCollection, type InferEntrySchema, type RenderedContent } from "astro:content";
+import { ThemeSelect } from "@/components/themes/ThemeSelect";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FormattedDate from "@/components/time/FormattedDate.astro";
+import Prose from "@/components/markdown/Prose.astro";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageDescription } from "@/components/app/PageDescription";
+import { MoveLeft } from "lucide-react";
+
+interface Post {
+	id: string;
+	body?: string;
+	collection: "posts";
+	data: InferEntrySchema<"posts">;
+	rendered?: RenderedContent;
+	filePath?: string;
+}
+
+interface Props {
+	posts: Array<Post>;
+}
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+	const collection = await getCollection("posts");
+	const tags = [
+		...new Set(
+			collection
+				.map((post) => post.data.tags)
+				.flat()
+				.sort()
+		),
+	];
+
+	return tags.map((tag) => {
+		if (!tag)
+			return {
+				params: { tag },
+				props: { posts: [] },
+			};
+		const filteredPosts = collection.filter((post) => post.data.tags?.includes(tag));
+		return {
+			params: { tag },
+			props: { posts: filteredPosts },
+		};
+	});
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout>
+	<section class="max-w-[64rem] mx-auto pt-32 pb-16">
+		<Prose>
+			<div class="flex gap-4 items-end justify-between capitalize">
+				<PageHeader>
+					{tag}
+					<a
+						href="/"
+						title="Go home"
+						class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-white hover:dark:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 mst"
+					>
+						<MoveLeft className="size-4 lg:size-6" />
+					</a>
+				</PageHeader>
+				<ThemeSelect client:load />
+			</div>
+			<PageDescription>All posts with the {tag} tag on the blog.</PageDescription>
+			<hr />
+			<ul class="not-prose">
+				{
+					posts.map((post: Post) => (
+						<li>
+							<a
+								href={`/posts/${post.id}/`}
+								class="group flex px-2 py-2 items-center justify-between text-base rounded hover:bg-zinc-400/30 dark:hover:bg-zinc-900 mst"
+							>
+								<h4 class="flex-none truncate text-zinc-900 dark:text-zinc-100">{post.data.title}</h4>
+								<span class="hidden sm:flex grow w-full h-px mx-4 border-t border-dashed border-zinc-500 dark:border-zinc-700" />
+								<p class="flex-none truncate text-sm text-zinc-600 dark:text-zinc-400">
+									<FormattedDate date={post.data.published} />
+								</p>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</Prose>
+	</section>
+</BaseLayout>

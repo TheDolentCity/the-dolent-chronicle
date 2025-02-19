@@ -1,6 +1,5 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
-import { rssSchema } from '@astrojs/rss';
 
 // Define collections
 const posts = defineCollection({
@@ -9,8 +8,9 @@ const posts = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		published: z.coerce.date(), // Transform string to Date object
-		updated: z.coerce.date().optional(),
+		updated: z.coerce.date().optional(), // Transform string to Date object
 		image: z.string().optional(),
+		tags: z.array(z.string()).optional(),
 	}),
 });
 

@@ -2,17 +2,47 @@
 import { getCollection } from "astro:content";
 import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import FormattedDate from "@/components/FormattedDate.astro";
-import Prose from "@/components/Prose.astro";
+import FormattedDate from "@/components/time/FormattedDate.astro";
+import Prose from "@/components/markdown/Prose.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
-import { PageHeader } from "@/components/PageHeader";
-import { PageDescription } from "@/components/PageDescription";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageDescription } from "@/components/app/PageDescription";
 
+// Get sorted posts
 const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+
+// Get all tags from posts
+const allTags = [
+	...posts
+		.map((post) => post.data.tags)
+		.flat()
+		.sort(),
+];
+
+// Count the instance of each tag
+const map = new Map<string, number>();
+allTags.forEach((tag) => {
+	// Ignore empty tags
+	if (tag?.trim() === "" || !tag) return;
+
+	// Increment existing tag count, or set first tag count
+	const count = map.get(tag);
+	if (count) {
+		map.set(tag, count + 1);
+	} else {
+		map.set(tag, 1);
+	}
+});
+
+// Map to an iterable, easy to read type
+const tags = map.entries().map((entry) => ({
+	tag: entry[0],
+	count: entry[1],
+}));
 ---
 
 <BaseLayout>
-	<section class="max-w-[64rem] mx-auto py-16">
+	<section class="max-w-[64rem] mx-auto pt-32 pb-16">
 		<Prose>
 			<div class="flex gap-4 items-end justify-between">
 				<PageHeader>
@@ -39,6 +69,19 @@ const posts = (await getCollection("posts")).sort((a, b) => b.data.published.val
 								</p>
 							</a>
 						</li>
+					))
+				}
+			</ul>
+			<ul class="not-prose flex flex-wrap gap-2 mt-16">
+				{
+					tags.map(({ tag, count }) => (
+						<a
+							href={`/tags/${tag}`}
+							class="flex gap-1 px-2 py-1.5 rounded-lg font-medium bg-zinc-400/25 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+						>
+							<span class="text-xs capitalize leading-none">{tag}</span>
+							<span class="text-xs leading-none">{count}</span>
+						</a>
 					))
 				}
 			</ul>

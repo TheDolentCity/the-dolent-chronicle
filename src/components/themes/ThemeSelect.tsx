@@ -66,6 +66,7 @@ export function ThemeSelect() {
 			<ThemeSelectRadioIndicator theme={currentTheme} />
 			{THEME_LIST.map((item) => (
 				<ThemeSelectRadioOption
+					key={item.value}
 					icon={item.icon}
 					theme={item.value}
 					currentTheme={currentTheme}
@@ -113,7 +114,6 @@ function ThemeSelectRadioOption({
 }) {
 	return (
 		<div
-			key={theme}
 			className={clsx(
 				"relative inline-flex h-7 w-7 items-center justify-center cursor-pointer",
 				theme === currentTheme ? "text-zinc-900 dark:text-zinc-300" : "text-zinc-500 dark:text-zinc-500"

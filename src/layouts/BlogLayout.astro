@@ -2,10 +2,21 @@
 import FormattedDate from "@/components/FormattedDate.astro";
 import Prose from "@/components/Prose.astro";
 import { ThemeSelect } from "@/components/themes/ThemeSelect";
-import { Home, Undo2 } from "lucide-react";
+import { MoveLeft, Undo2 } from "lucide-react";
 import BaseLayout from "./BaseLayout.astro";
+import { PageHeader } from "@/components/PageHeader";
+import { PageDescription } from "@/components/PageDescription";
 
-const { title, description, published, updated, image } = Astro.props;
+interface Props {
+	title: string;
+	description: string;
+	published: Date;
+	updated?: Date | undefined;
+	image?: string | undefined;
+	minutes: number;
+}
+
+const { title, description, published, updated, image, minutes } = Astro.props;
 ---
 
 <BaseLayout>
@@ -18,28 +29,31 @@ const { title, description, published, updated, image } = Astro.props;
 			)
 		} -->
 		<Prose class="mx-auto">
-			<div class="">
-				<!-- <a href="/" title="Back to home" class="block mb-12">
-					<Undo2 class="size-6" />
-				</a> -->
-				<!-- <div class="mb-2 text-xs lg:text-sm uppercase">
+			<div class="flex gap-2 mb-4 justify-between items-start">
+				<div>
+					<PageHeader>
+						{title}
+						<a
+							href="/"
+							title="Go home"
+							class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-white hover:dark:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 mst"
+						>
+							<MoveLeft className="size-4 lg:size-6" />
+						</a>
+					</PageHeader>
+					<PageDescription>
+						{description}
+					</PageDescription>
+				</div>
+				<div
+					class="hidden md:flex lg:flex-col not-prose md:gap-2 lg:gap-0.5 pt-3 md:items-center lg:items-end text-xs text-right text-zinc-600 dark:text-zinc-400"
+				>
 					<FormattedDate date={published} />
-				</div> -->
-				<h1 class="relative !mb-4 text-3xl lg:text-5xl tracking-tight font-normal">
-					{title}
-					<a
-						href="/"
-						title="Go home"
-						class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-white hover:dark:bg-zinc-800 mst"
-					>
-						<Home className="size-4 lg:size-6" />
-					</a>
-				</h1>
-				<p class="!mt-0 lg:!mt-4 text-lg lg:text-xl leading-normal">
-					{description}
-				</p>
-				<hr />
+					<span class="hidden md:block lg:hidden">•</span>
+					<div class="truncate">{Math.round(minutes)} minutes to read</div>
+				</div>
 			</div>
+			<hr />
 			<slot />
 			<hr />
 			<p class="italic">

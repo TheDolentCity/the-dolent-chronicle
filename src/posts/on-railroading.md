@@ -1,9 +1,12 @@
 ---
 title: On Railroading
 description: A familiar fiction, expressed as an RPG session.
-published: Feb 17 2025
-updated: Feb 18 2025
+published: Nov 10 2023
 image: /blog-placeholder-1.jpg
+---
+
+_This article was originally published on SubStack, but it has been republished here as this site will serve as the long term record for my thoughts, for good or ill._
+
 ---
 
 **GM:** Alright, is everyone good to head south? Any last farewells? Is your plan still to make for the Gap of Rohan?

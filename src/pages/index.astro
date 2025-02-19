@@ -4,7 +4,9 @@ import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import Prose from "@/components/Prose.astro";
-import { SITE_DESCRIPTION } from "@/constants";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
+import { PageHeader } from "@/components/PageHeader";
+import { PageDescription } from "@/components/PageDescription";
 
 const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 ---
@@ -12,13 +14,15 @@ const posts = (await getCollection("posts")).sort((a, b) => b.data.published.val
 <BaseLayout>
 	<section class="max-w-[64rem] mx-auto py-16">
 		<Prose>
-			<div class="flex gap-4 mb-4 items-end justify-between">
-				<h1 class="!m-0 text-3xl lg:text-5xl tracking-tight font-normal">The Dolent Chronicle</h1>
-				<ThemeSelect client:visible />
+			<div class="flex gap-4 items-end justify-between">
+				<PageHeader>
+					{SITE_TITLE}
+				</PageHeader>
+				<ThemeSelect client:load />
 			</div>
-			<p class="!mt-0 lg:!mt-6 text-lg lg:text-lg leading-normal">
+			<PageDescription>
 				{SITE_DESCRIPTION}
-			</p>
+			</PageDescription>
 			<hr />
 			<ul class="not-prose">
 				{

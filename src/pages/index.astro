@@ -1,54 +1,43 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import { getCollection } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
-import Prose from "../components/Prose.astro";
+import { ThemeSelect } from "@/components/themes/ThemeSelect";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import Prose from "@/components/Prose.astro";
+import { SITE_DESCRIPTION } from "@/constants";
 
-const posts = (await getCollection("posts")).sort(
-	(a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-);
+const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={"The Dolent Chronicle"} description={""} />
-	</head>
-	<body
-		class="font-inter overflow-y-scroll bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400"
-	>
-		<main class="w-full min-h-[100svh]">
-			<section class="max-w-[64rem] mx-auto py-16">
-				<Prose>
-					<h1 class="!mb-4 text-2xl lg:text-5xl tracking-tight font-normal">
-						The Dolent Chronicle
-					</h1>
-					<!-- <p class="!mt-0 lg:!mt-6 text-lg lg:text-2xl leading-normal">
-						{description}
-					</p> -->
-					<hr />
-					<ul class="not-prose">
-						{
-							posts.map((post) => (
-								<li>
-									<a
-										href={`/posts/${post.id}/`}
-										class="flex px-2 py-2 justify-between text-base rounded hover:bg-zinc-400 dark:hover:bg-zinc-900"
-									>
-										<h4 class="title">{post.data.title}</h4>
-										<p class="date">
-											<FormattedDate date={post.data.published} />
-										</p>
-									</a>
-								</li>
-							))
-						}
-					</ul>
-				</Prose>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+	<section class="max-w-[64rem] mx-auto py-16">
+		<Prose>
+			<div class="flex gap-4 mb-4 items-end justify-between">
+				<h1 class="!m-0 text-3xl lg:text-5xl tracking-tight font-normal">The Dolent Chronicle</h1>
+				<ThemeSelect client:visible />
+			</div>
+			<p class="!mt-0 lg:!mt-6 text-lg lg:text-lg leading-normal">
+				{SITE_DESCRIPTION}
+			</p>
+			<hr />
+			<ul class="not-prose">
+				{
+					posts.map((post) => (
+						<li>
+							<a
+								href={`/posts/${post.id}/`}
+								class="group flex px-2 py-2 items-center justify-between text-base rounded hover:bg-zinc-400/30 dark:hover:bg-zinc-900 mst"
+							>
+								<h4 class="flex-none truncate text-zinc-900 dark:text-zinc-100">{post.data.title}</h4>
+								<span class="hidden sm:flex grow w-full h-px mx-4 border-t border-dashed border-zinc-500 dark:border-zinc-700" />
+								<p class="flex-none truncate text-sm text-zinc-600 dark:text-zinc-400">
+									<FormattedDate date={post.data.published} />
+								</p>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</Prose>
+	</section>
+</BaseLayout>

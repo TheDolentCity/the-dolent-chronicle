@@ -1,0 +1,36 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, description } = Astro.props;
+
+const themeScript = `
+  function getThemeMode() {
+    const theme = localStorage.getItem('theme');
+
+    if (theme === 'auto') {
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+      
+    return theme;
+  }
+
+  const mode = getThemeMode();
+  document.documentElement.className = mode;
+  document.documentElement.dataset.theme = mode;
+`;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+		<script set:html={themeScript} />
+	</head>
+	<body class="overflow-y-scroll font-inter bg-zinc-300 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400">
+		<main class="w-full min-h-[100svh] px-12">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

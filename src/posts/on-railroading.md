@@ -2,6 +2,7 @@
 title: On Railroading
 description: A familiar fiction, expressed as an RPG session.
 published: Feb 17 2025
+updated: Feb 18 2025
 image: /blog-placeholder-1.jpg
 ---
 

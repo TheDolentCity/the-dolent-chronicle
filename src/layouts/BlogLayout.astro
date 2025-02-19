@@ -1,0 +1,58 @@
+---
+import FormattedDate from "@/components/FormattedDate.astro";
+import Prose from "@/components/Prose.astro";
+import { ThemeSelect } from "@/components/themes/ThemeSelect";
+import { Home, Undo2 } from "lucide-react";
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, published, updated, image } = Astro.props;
+---
+
+<BaseLayout>
+	<article class="max-w-[64rem] mx-auto pt-16 pb-16">
+		<!-- {
+			image && (
+				<div class="w-full mx-auto rounded">
+					<img width={1020} height={510} src={image} alt="" />
+				</div>
+			)
+		} -->
+		<Prose class="mx-auto">
+			<div class="">
+				<!-- <a href="/" title="Back to home" class="block mb-12">
+					<Undo2 class="size-6" />
+				</a> -->
+				<!-- <div class="mb-2 text-xs lg:text-sm uppercase">
+					<FormattedDate date={published} />
+				</div> -->
+				<h1 class="relative !mb-4 text-3xl lg:text-5xl tracking-tight font-normal">
+					{title}
+					<a
+						href="/"
+						title="Go home"
+						class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-white hover:dark:bg-zinc-800 mst"
+					>
+						<Home className="size-4 lg:size-6" />
+					</a>
+				</h1>
+				<p class="!mt-0 lg:!mt-4 text-lg lg:text-xl leading-normal">
+					{description}
+				</p>
+				<hr />
+			</div>
+			<slot />
+			<hr />
+			<p class="italic">
+				<a href="/" class="font-garamond font-normal text-lg lg:text-xl">The Dolent Chronicle</a> is an RPG blog produced by Dante Nardo. If you liked this post,
+				please consider sharing it on whatever doomed planes you reside.
+			</p>
+			{
+				updated && (
+					<p class="italic">
+						This article was originally published <FormattedDate date={published} /> and later updated on <FormattedDate date={updated} />.
+					</p>
+				)
+			}
+		</Prose>
+	</article>
+</BaseLayout>

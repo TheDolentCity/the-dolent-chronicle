@@ -1,4 +1,6 @@
 {
     "editor.tabSize": 2,
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "prettier.printWidth": 160,
+    "editor.formatOnSave": true
 }

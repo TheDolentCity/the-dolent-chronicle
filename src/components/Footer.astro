@@ -1,30 +1,10 @@
 ---
+import { ThemeSelect } from "./themes/ThemeSelect";
+
 const today = new Date();
 ---
 
-<footer
-	class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black"
->
-	&copy; {today.getFullYear()} The Dolent Chronicle. All rights reserved.
+<footer class="flex gap-4 p-8 items-center justify-center border-t border-zinc-400 dark:border-zinc-800 bg-zinc-200 dark:bg-black">
+	<span>&copy; {today.getFullYear()} The Dolent Chronicle. All rights reserved.</span>
+	<ThemeSelect client:visible />
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-</style>

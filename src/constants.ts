@@ -1,3 +1,2 @@
 export const SITE_TITLE = 'The Dolent Chronicle';
-export const SITE_DESCRIPTION = 'Ah, welcome traveler. Take a deep drink from this accursed well.';
-// export const SITE_DESCRIPTION = 'Ah, traveler. Welcome to this most curated paper. Come, come, consider these tabletop RPG posts. Something might catch your eye.';
+export const SITE_DESCRIPTION = "A paper printed in the stone halls of the dead. An RPG blog for lonely spiders, inky funghi, and those who 'Play Worlds, Not Rules'.";

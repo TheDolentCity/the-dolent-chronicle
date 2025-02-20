@@ -26,6 +26,23 @@ const themeScript = `
 	<head>
 		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
 		<script set:html={themeScript} />
+
+		<!-- Fixes Flash-Of-Unstyled-Content by requiring client-side css to load to make page visible -->
+		<style is:inline>
+			body {
+				visibility: hidden;
+				opacity: 0;
+			}
+		</style>
+		<style is:global>
+			body {
+				visibility: visible;
+				opacity: 1;
+				transition:
+					visibility 0.2s linear,
+					opacity 0.2s linear;
+			}
+		</style>
 	</head>
 	<body class="overflow-y-scroll font-inter bg-zinc-300 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400">
 		<main class="w-full min-h-[100svh] px-12">

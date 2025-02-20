@@ -12,7 +12,7 @@ interface Props {
 	description: string;
 	published: Date;
 	updated?: Date | undefined;
-	image?: string | undefined;
+	image?: { src: string; width: number; height: number; format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif" } | undefined;
 	imageAlt?: string | undefined;
 	caption?: string | undefined;
 	minutes: number;
@@ -22,13 +22,14 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 ---
 
 <BaseLayout>
-	<article class="max-w-[70rem] mx-auto pt-32 pb-16">
+	<article class="max-w-[70rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose class="mx-auto">
 			<div class="mb-4">
 				<div class="flex gap-2 justify-between items-end">
 					<PageHeader>
 						{title}
 						<a
+							data-astro-prefetch
 							href="/"
 							title="Go home"
 							class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-white hover:dark:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 mst"
@@ -63,8 +64,8 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 			<slot />
 			<hr />
 			<p class="italic">
-				<a href="/" class="font-garamond font-normal text-lg lg:text-xl">The Dolent Chronicle</a> is an RPG blog produced by Dante Nardo. If you liked this post,
-				please consider sharing it on whatever doomed planes you reside.
+				<a data-astro-prefetch href="/" class="font-garamond font-normal text-lg lg:text-xl">The Dolent Chronicle</a> is an RPG blog produced by Dante Nardo. If
+				you liked this post, please consider sharing it on whatever doomed planes you reside.
 			</p>
 			{
 				updated && (

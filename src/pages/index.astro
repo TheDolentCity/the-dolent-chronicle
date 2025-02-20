@@ -42,7 +42,7 @@ const tags = map.entries().map((entry) => ({
 ---
 
 <BaseLayout>
-	<section class="max-w-[64rem] mx-auto pt-32 pb-16">
+	<section class="max-w-[64rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose>
 			<div class="flex gap-4 items-end justify-between">
 				<PageHeader>
@@ -59,6 +59,7 @@ const tags = map.entries().map((entry) => ({
 					posts.map((post) => (
 						<li>
 							<a
+								data-astro-prefetch
 								href={`/posts/${post.id}/`}
 								class="group flex px-2 py-2 items-center justify-between text-base rounded hover:bg-zinc-400/30 dark:hover:bg-zinc-900 mst"
 							>
@@ -77,6 +78,7 @@ const tags = map.entries().map((entry) => ({
 					tags.map(({ tag, count }) => (
 						<a
 							href={`/tags/${tag}`}
+							data-astro-prefetch
 							class="flex gap-1 px-2 py-1.5 rounded-lg font-medium bg-zinc-400/25 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
 						>
 							<span class="text-xs capitalize leading-none">{tag}</span>

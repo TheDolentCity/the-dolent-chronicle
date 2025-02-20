@@ -17,6 +17,7 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 	},
+	prefetch: true,
 	vite: {
 		plugins: [mdx(), sitemap(), tailwindcss()],
 	},

@@ -2,7 +2,9 @@
 title: On Railroading
 description: A familiar fiction, expressed as an RPG session.
 published: Nov 10 2023
-image: /blog-placeholder-1.jpg
+image: src/assets/on-railroading.jpg
+imageAlt: A dark, distored, halftone image of a skewed lamp on a desk lighting up a tall pile of old books.
+caption: An edited version of a stock photo from Luca Calderone.
 tags: [RPG, railroading, referee, fiction]
 ---
 

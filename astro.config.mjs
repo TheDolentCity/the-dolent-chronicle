@@ -10,7 +10,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
 	site: "https://thedolentchronicle.com",
 	output: "static",
-	adapter: vercel(),
+	adapter: vercel({
+		imageService: true,
+	}),
 	integrations: [react()],
 	markdown: {
 		remarkPlugins: [remarkReadingTime],

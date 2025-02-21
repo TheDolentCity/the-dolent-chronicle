@@ -1,0 +1,68 @@
+---
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageDescription } from "@/components/app/PageDescription";
+import Prose from "@/components/markdown/Prose.astro";
+import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
+import { Image } from "astro:assets";
+import { MoveLeft } from "lucide-react";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+	frontmatter: {
+		title: string;
+		description: string;
+		image?: { src: string; width: number; height: number; format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif" } | undefined;
+		imageAlt?: string | undefined;
+		caption?: string | undefined;
+	};
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+	<article class="max-w-[70rem] mx-auto pt-16 md:pt-32 pb-16">
+		<Prose class="mx-auto">
+			<div class="mb-4">
+				<div class="flex gap-2 justify-between items-end">
+					<PageHeader>
+						{frontmatter.title}
+						<a
+							data-astro-prefetch
+							href="/"
+							title="Go home"
+							class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-400/25 hover:dark:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 mst"
+						>
+							<MoveLeft className="size-4 lg:size-6" />
+						</a>
+					</PageHeader>
+				</div>
+				<PageDescription>
+					{frontmatter.description}
+				</PageDescription>
+			</div>
+			<hr />
+		</Prose>
+		{
+			frontmatter.image && (
+				<figure class="mt-9 mb-9">
+					<Image width={1200} height={800} src={frontmatter.image} alt={frontmatter.imageAlt ?? ""} />
+					<figcaption class="mt-2 text-xs text-center">{frontmatter.caption}</figcaption>
+				</figure>
+			)
+		}
+		<Prose class="mx-auto">
+			<slot />
+			<hr />
+			<a
+				target="_blank"
+				href="https://bsky.app/profile/thedolentcity.bsky.social"
+				title="Link to Bluesky account"
+				class="not-prose inline-flex gap-2 -mx-3 px-3 py-1.5 items-center rounded text-sm lg:text-base hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-white dark:hover:bg-zinc-900 mst"
+			>
+				Get in touch with me on Bluesky
+				<BlueskyLogo width="18" height="18" />
+			</a>
+		</Prose>
+	</article>
+</BaseLayout>

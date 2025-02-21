@@ -2,8 +2,8 @@
 title: My Library of Babel
 description: An annual reflection and theory on crafting excellent roleplaying games.
 published: Dec 22 2023
-image: src/assets/my-library-of-babel.png
-imageAlt: A dark, distored, halftone image of a skewed lamp on a desk lighting up a tall pile of old books.
+image: ./my-library-of-babel.png
+imageAlt: A dark, distorted, halftone image of a skewed lamp on a desk lighting up a tall pile of old books.
 caption: An edited version of a stock photo from Jez Timms.
 tags: [essay, improv, RPG, technique]
 ---

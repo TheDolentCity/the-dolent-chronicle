@@ -1,6 +1,16 @@
 {
     "editor.tabSize": 2,
-    "cSpell.enabled": false,
+    "cSpell.enabled": true,
     "prettier.printWidth": 160,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "cSpell.words": [
+        "Bastionland",
+        "frontmatter",
+        "lucide",
+        "Mydwandr",
+        "Sleepaway",
+        "Timms",
+        "underdiscussed",
+        "Vaarn"
+    ]
 }

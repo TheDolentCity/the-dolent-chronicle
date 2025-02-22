@@ -22,7 +22,7 @@ interface Props {
 const { title, description, published, updated, image, imageAlt, caption, minutes } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout title={title} description={description}>
 	<article class="max-w-[70rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose class="mx-auto">
 			<div class="mb-4">

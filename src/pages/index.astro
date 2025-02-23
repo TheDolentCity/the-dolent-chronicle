@@ -35,10 +35,14 @@ allTags.forEach((tag) => {
 });
 
 // Map to an iterable, easy to read type
-const tags = map.entries().map((entry) => ({
-	tag: entry[0],
-	count: entry[1],
-}));
+const tags = map
+	.entries()
+	.map((entry) => ({
+		tag: entry[0],
+		count: entry[1],
+	}))
+	.toArray()
+	.sort((a, b) => b.count - a.count);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>

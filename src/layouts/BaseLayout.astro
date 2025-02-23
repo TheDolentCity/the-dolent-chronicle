@@ -6,9 +6,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 interface Props {
 	title: string;
 	description: string;
+	image?: string | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 
 const themeScript = `
   function getThemeMode() {
@@ -29,7 +30,7 @@ const themeScript = `
 
 <html lang="en">
 	<head>
-		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} image={image} />
 		<script set:html={themeScript} />
 
 		<!-- Fixes Flash-Of-Unstyled-Content by requiring client-side css to load to make page visible -->

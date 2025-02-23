@@ -4,7 +4,7 @@ description: A familiar fiction, expressed as an RPG session.
 published: Nov 10 2023
 image: ./on-railroading.jpg
 imageAlt: A dark, distorted, halftone image of a skewed lamp on a desk lighting up a tall pile of old books.
-caption: "Stock: Luca Calderone"
+caption: "Photo by Luca Calderone"
 tags: [RPG, railroading, referee, fiction]
 ---
 

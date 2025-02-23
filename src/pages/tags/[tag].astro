@@ -7,6 +7,7 @@ import Prose from "@/components/markdown/Prose.astro";
 import { PageHeader } from "@/components/app/PageHeader";
 import { PageDescription } from "@/components/app/PageDescription";
 import { MoveLeft } from "lucide-react";
+import { SITE_TITLE } from "@/constants";
 
 interface Post {
 	id: string;
@@ -39,7 +40,7 @@ export async function getStaticPaths() {
 				params: { tag },
 				props: { posts: [] },
 			};
-		const filteredPosts = collection.filter((post) => post.data.tags?.includes(tag));
+		const filteredPosts = collection.filter((post) => post.data.tags?.includes(tag)).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 		return {
 			params: { tag },
 			props: { posts: filteredPosts },
@@ -51,7 +52,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout title={tag ?? SITE_TITLE} description="Posts with the provided tag.">
 	<section class="max-w-[64rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose>
 			<div class="flex gap-4 items-end justify-between capitalize">

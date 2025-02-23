@@ -4,7 +4,7 @@ description: An annual reflection and theory on crafting excellent roleplaying g
 published: Dec 22 2023
 image: ./my-library-of-babel.png
 imageAlt: A dark, distorted, halftone image of a skewed lamp on a desk lighting up a tall pile of old books.
-caption: "Stock: Jez Timms"
+caption: "Photo by Jez Timms"
 tags: [essay, improv, RPG, technique]
 ---
 

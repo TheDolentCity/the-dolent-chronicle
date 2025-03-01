@@ -18,3 +18,4 @@ const posts = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = { posts };
+ 

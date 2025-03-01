@@ -5,7 +5,7 @@ published: Feb 28 2025
 image: ./paladins-of-awoudan-banner.webp
 imageAlt: A dark, distorted, halftone image of an armored knight with a spear and shield on a white horse looking at a stone with runes. A human skull lays nearby while a black bird flies overhead.
 caption: "Painting is Knight at the Crossroads by Victor Vasnetsov"
-tags: [RPG, announcement, fantasy, grimdark]
+tags: [RPG, announcement, fantasy, grimdark, paladins-of-awoudan]
 ---
 
 In December, an old friend and I commiserated on our old college days of playing _D&D 4th edition_ (4E for short). Despite it's many, _many_ flaws, we spent years of our Saturdays delving into ancient libraries, riding gryphons in the Spiked Peaks, and slaying aberrations from the Far Realm.

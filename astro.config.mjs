@@ -13,7 +13,7 @@ export default defineConfig({
 	adapter: vercel({
 		imageService: true,
 	}),
-	integrations: [react()],
+	integrations: [mdx(), react()],
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 	},

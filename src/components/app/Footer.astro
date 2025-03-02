@@ -25,7 +25,7 @@ const today = new Date();
 				</a>
 			</nav>
 			<div class="flex gap-2 lg:gap-4 items-center">
-				<ThemeSelect client:load />
+				<ThemeSelect client:only="react" />
 			</div>
 		</div>
 		<div class="pt-2 text-sm">&copy; {today.getFullYear()} The Dolent Chronicle. All rights reserved.</div>

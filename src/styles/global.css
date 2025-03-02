@@ -3,6 +3,8 @@
 @import '@fontsource-variable/inter';
 @plugin '@tailwindcss/typography';
 
+@source "../components/";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

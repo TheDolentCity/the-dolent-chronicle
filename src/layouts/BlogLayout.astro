@@ -1,11 +1,11 @@
 ---
-import FormattedDate from "@/components/time/FormattedDate.astro";
+import { FormattedDate } from "@/components/time/FormattedDate";
 import { PageHeader } from "@/components/app/PageHeader";
 import { PageDescription } from "@/components/app/PageDescription";
-import { MoveLeft } from "lucide-react";
 import BaseLayout from "./BaseLayout.astro";
 import Prose from "@/components/markdown/Prose.astro";
 import { Image } from "astro:assets";
+import { PageHomeButton } from "@/components/app/PageHomeButton";
 
 interface Props {
 	title: string;
@@ -28,14 +28,7 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 				<div class="flex gap-2 justify-between items-end">
 					<PageHeader>
 						{title}
-						<a
-							data-astro-prefetch
-							href="/"
-							title="Go home"
-							class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-400/25 hover:dark:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 mst"
-						>
-							<MoveLeft className="size-4 lg:size-6" />
-						</a>
+						<PageHomeButton />
 					</PageHeader>
 					<div
 						class="hidden md:flex lg:flex-col not-prose md:gap-2 lg:gap-0.5 md:pb-1.5 lg:pb-0 md:items-center lg:items-end text-xs text-right text-zinc-600 dark:text-zinc-400"

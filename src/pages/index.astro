@@ -2,11 +2,12 @@
 import { getCollection } from "astro:content";
 import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import FormattedDate from "@/components/time/FormattedDate.astro";
 import Prose from "@/components/markdown/Prose.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import { PageHeader } from "@/components/app/PageHeader";
 import { PageDescription } from "@/components/app/PageDescription";
+import { PostList } from "@/components/posts/Posts";
+import { TagList } from "@/components/tags/Tags";
 
 // Get sorted posts
 const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
@@ -52,45 +53,14 @@ const tags = map
 				<PageHeader>
 					{SITE_TITLE}
 				</PageHeader>
-				<ThemeSelect client:load className="not-md:hidden" />
+				<ThemeSelect client:only="react" className="not-md:hidden" />
 			</div>
 			<PageDescription>
 				{SITE_DESCRIPTION}
 			</PageDescription>
 			<hr />
-			<ul class="not-prose">
-				{
-					posts.map((post) => (
-						<li>
-							<a
-								data-astro-prefetch
-								href={`/posts/${post.id}/`}
-								class="group flex flex-col sm:flex-row max-w-full px-2 py-2 sm:items-center justify-between text-sm md:text-base overflow-hidden rounded hover:bg-zinc-400/25 dark:hover:bg-zinc-900 mst"
-							>
-								<h4 class="flex-none truncate text-zinc-900 dark:text-zinc-100">{post.data.title}</h4>
-								<span class="hidden sm:flex grow w-full h-px mx-4 border-t border-dashed border-zinc-500 dark:border-zinc-700" />
-								<p class="flex-none truncate text-sm text-zinc-600 dark:text-zinc-400">
-									<FormattedDate date={post.data.published} />
-								</p>
-							</a>
-						</li>
-					))
-				}
-			</ul>
-			<ul class="not-prose flex flex-wrap gap-2 mt-16">
-				{
-					tags.map(({ tag, count }) => (
-						<a
-							href={`/tags/${tag}`}
-							data-astro-prefetch
-							class="flex gap-1 px-2 py-1.5 rounded-lg font-medium bg-zinc-400/25 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-						>
-							<span class="text-xs capitalize leading-none">{tag}</span>
-							<span class="text-xs leading-none">{count}</span>
-						</a>
-					))
-				}
-			</ul>
+			<PostList posts={posts} />
+			<TagList tags={tags} />
 		</Prose>
 	</section>
 </BaseLayout>

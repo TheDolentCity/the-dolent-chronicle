@@ -53,7 +53,7 @@ const tags = map
 				<PageHeader>
 					{SITE_TITLE}
 				</PageHeader>
-				<ThemeSelect client:load className="not-md:hidden" />
+				<ThemeSelect client:only="react" className="not-md:hidden" />
 			</div>
 			<PageDescription>
 				{SITE_DESCRIPTION}

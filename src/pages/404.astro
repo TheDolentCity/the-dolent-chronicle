@@ -11,7 +11,7 @@ import { PageDescription } from "@/components/app/PageDescription";
 		<Prose>
 			<div class="flex gap-4 items-end justify-between">
 				<PageHeader>404</PageHeader>
-				<ThemeSelect client:load />
+				<ThemeSelect client:only="react" />
 			</div>
 			<PageDescription>Page not found.</PageDescription>
 			<hr />

@@ -60,7 +60,7 @@ const { posts } = Astro.props;
 					{tag}
 					<PageHomeButton />
 				</PageHeader>
-				<ThemeSelect client:load className="not-md:hidden" />
+				<ThemeSelect client:only="react" className="not-md:hidden" />
 			</div>
 			<PageDescription>All posts with the {tag} tag on the blog.</PageDescription>
 			<hr />

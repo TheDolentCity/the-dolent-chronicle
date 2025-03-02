@@ -13,15 +13,15 @@ function setDocumentTheme(theme: Themes) {
 
 const THEME_LIST: Array<{ icon: ReactNode; value: Themes }> = [
 	{
-		icon: <MonitorCog style={{ width: "1rem", height: "1rem" }} />,
+		icon: <MonitorCog className="h-4 w-4" />,
 		value: Themes.Auto,
 	},
 	{
-		icon: <Sun style={{ width: "1rem", height: "1rem" }} />,
+		icon: <Sun className="h-4 w-4" />,
 		value: Themes.Light,
 	},
 	{
-		icon: <Moon style={{ width: "1rem", height: "1rem" }} />,
+		icon: <Moon className="h-4 w-4" />,
 		value: Themes.Dark,
 	},
 ];

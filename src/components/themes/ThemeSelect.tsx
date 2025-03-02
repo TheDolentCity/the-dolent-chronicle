@@ -26,7 +26,7 @@ const THEME_LIST: Array<{ icon: ReactNode; value: Themes }> = [
 	},
 ];
 
-export function ThemeSelect() {
+export function ThemeSelect({ className }: { className?: string | undefined }) {
 	const currentTheme = useStore(themeStore);
 
 	useEffect(() => {
@@ -49,20 +49,20 @@ export function ThemeSelect() {
 
 		let theme = value;
 
-    // If auto, get the preferred theme from the bowser
+		// If auto, get the preferred theme from the bowser
 		if (value === Themes.Auto) {
 			theme = window.matchMedia("(prefers-color-scheme: dark)").matches
 				? Themes.Dark
 				: Themes.Light;
 		}
 
-    // Update theme in local storage and document element
+		// Update theme in local storage and document element
 		localStorage.setItem(LocalStorageKeys.Theme, value);
 		setDocumentTheme(theme);
 	}
 
 	return (
-		<ThemeSelectRadioGroup>
+		<ThemeSelectRadioGroup className={className}>
 			<ThemeSelectRadioIndicator theme={currentTheme} />
 			{THEME_LIST.map((item) => (
 				<ThemeSelectRadioOption
@@ -77,10 +77,10 @@ export function ThemeSelect() {
 	);
 }
 
-function ThemeSelectRadioGroup({ children }: { children: React.ReactNode }) {
+function ThemeSelectRadioGroup({ className, children }: { className?: string | undefined, children: React.ReactNode }) {
 	return (
 		<div
-			className="relative flex p-0.5 items-center rounded-full bg-zinc-400/25 dark:bg-zinc-900 mst"
+			className={clsx("relative inline-flex p-0.5 items-center rounded-full bg-zinc-400/25 dark:bg-zinc-900 mst", className)}
 			role="radiogroup"
 		>
 			{children}
@@ -116,7 +116,9 @@ function ThemeSelectRadioOption({
 		<div
 			className={clsx(
 				"relative inline-flex h-7 w-7 items-center justify-center cursor-pointer",
-				theme === currentTheme ? "text-zinc-900 dark:text-zinc-300" : "text-zinc-500 dark:text-zinc-500"
+				theme === currentTheme
+					? "text-zinc-900 dark:text-zinc-300"
+					: "text-zinc-500 dark:text-zinc-500"
 			)}
 			onClick={() => changeTheme(theme)}
 			onKeyDown={(e) => {

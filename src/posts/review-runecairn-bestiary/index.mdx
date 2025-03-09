@@ -1,7 +1,8 @@
 ---
 title: "Play Critica — Runecairn Bestiary"
 description: An RPG critique focused on inspiring, usable, and playable texts.
-published: Mar 8 2025
+published: Mar 9 2025
+updated: Mar 9 2025
 image: ./runecairn-bestiary.webp
 imageAlt: A bright red banner with a blue, undead viking and yellow runic text that says Runecairn Bestiary.
 tags: [RPG, critica, review, bestiary]
@@ -9,6 +10,8 @@ tags: [RPG, critica, review, bestiary]
 
 import Figure from "@/components/markdown/Figure.astro";
 import turtle from './river-turtle.webp';
+import exampleGrid from './example-grid.webp';
+import exampleLeading from './example-leading.webp';
 
 _Play Critica is a review series where I focus on practical uses of an RPG text, whether you play with a supporting system or not. System elements such as procedures and mechanics are ignored in favor of answering three questions: is the text inspiring, is the text usable, and is the text playable?_
 
@@ -35,9 +38,19 @@ A large bird, maybe a heron, flees from the river turtle. We can see the size of
 
 The body typeface is [Adobe Jenson](https://en.wikipedia.org/wiki/Adobe_Jenson). I find the low x-height and diagonal stress of the characters difficult to read at this size. Some lines have no ascenders or descenders and the gulf between them seems huge, but decreasing the leading would lead to collisions on other lines. While Jenson is an iconic typeface and fits the theme of an older text, I find it sacrifices some readability to do so.
 
+<Figure src={exampleLeading}
+        alt="Two lines of text from the bestiary that show a very small gap between the 'g' of the first line and the 'd' of the second line along with a large space between a 'u' and 'e'."
+        caption="Descenders like 'y' and 'g' are almost touching ascenders 'l' and 'd', but the huge space between common letters like 'u' and 'e' increase the difficulty of jumping between lines on bulleted lists." />
+
 My main concern is with the table of contents. It lists each individual monster in alphabetical order, which is not uncommon. The result is that it's easy enough to find a monster that begins with the letter `M`, but flipping through the text can give you monster whiplash. One moment I'm reading about a wild dog and the next thing I see is a colossal serpent the "length of the horizon". If I'm running a session where players are traveling through a lively forest and I want to pull up some beast stat blocks, I may need to jump between pages 6, 16, 37, 52, and 60. This structure is less discoverable. The first spread following the table of contents provides icons and descriptions for the different types of monsters in the text. If the bestiary was organized into subsections based on these types, it would be far easier to find a relevant monster without its name or compare similar monsters against their descriptions. Both actions are necessary for GM prep and improvising relevant monsters at the table.
 
-A strong point for the usability of the text is its grid layout. Each spread utilizes a 2x3 module grid. This allows a page to fit up to six small stat blocks or three wide stat blocks. Each spread has at least one piece of art, which can cover anywhere from a 1x1 module of the grid or the entire page. This structure is quick to learn and makes scanning pages quickly a breeze. I also suspect the creator, Colin Le Sueur, wrote directly into the layout as most stat blocks take up their assigned space and rarely leave ill-fitting [runts](https://en.wikipedia.org/wiki/Widows_and_orphans). This creates a darker [type color](https://en.wikipedia.org/wiki/Type_color) and makes it easier for the eye to jump around the page when hunting for specific words.
+A strong point for the usability of the text is its grid layout. Each spread utilizes a 2x3 module grid. This allows a page to fit up to six small stat blocks or three wide stat blocks. Each spread has at least one piece of art, which can cover anywhere from a 1x1 module of the grid or the entire page. This structure is quick to learn and makes scanning pages quickly a breeze.
+
+<Figure src={exampleGrid}
+        alt="A blurred and fuzzy spread from the bestiary that hides text and highlights the underlying grid."
+        caption="Despite the blur and noise effect on the spread, you can clearly see the underlying grid and know where monster sections begin and end." />
+
+I also suspect the creator, Colin Le Sueur, wrote directly into the layout as most stat blocks take up their assigned space and rarely leave ill-fitting [runts](https://en.wikipedia.org/wiki/Widows_and_orphans). This creates a darker [type color](https://en.wikipedia.org/wiki/Type_color) and makes it easier for the eye to jump around the page when hunting for specific words.
 
 ## Is the text playable?
 
@@ -54,3 +67,7 @@ I use the term "playable" to refer to how easy it is for me to pick up a text, t
 While it is hard to find relevant monsters without scanning page by page, and there are too many similar monsters, the plethora of art and several inspiring monster designs make _Runecairn Bestiary_ a worthwhile purchase for anyone running a Norse campaign or setting.
 
 If you wish to purchase a copy for yourself, physical and digital copies of _Runecairn Bestiary_ can be found at [byodinsbeardrpg.com](https://shop.byodinsbeardrpg.com/products/runecairn-bestiary). Writing, layout, and design by Colin Le Sueur. Cover illustrations by Goran Gligović and Brandon Yu. Interior illustrations by Kim Diaz Holm, Felipe Faria, Dean Spencer, Jeffrey Koch, Brandon Yu, Perplexing Ruins, and Colin Le Sueur.
+
+---
+
+_Updated on March 9th to include example images for the typography and grid sections._

@@ -1,5 +1,5 @@
 ---
-title: "New Game: Paladins of Awoudan"
+title: "New Game — Paladins of Awoudan"
 description: Announcing a new grimdark, tactical roleplaying game.
 published: Feb 28 2025
 image: ./paladins-of-awoudan-banner.webp

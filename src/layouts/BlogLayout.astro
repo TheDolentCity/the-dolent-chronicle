@@ -2,10 +2,10 @@
 import { FormattedDate } from "@/components/time/FormattedDate";
 import { PageHeader } from "@/components/app/PageHeader";
 import { PageDescription } from "@/components/app/PageDescription";
-import BaseLayout from "./BaseLayout.astro";
-import Prose from "@/components/markdown/Prose.astro";
-import { Image } from "astro:assets";
 import { PageHomeButton } from "@/components/app/PageHomeButton";
+import BaseLayout from "./BaseLayout.astro";
+import Figure from "@/components/markdown/Figure.astro";
+import Prose from "@/components/markdown/Prose.astro";
 
 interface Props {
 	title: string;
@@ -44,20 +44,13 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 			</div>
 			<hr />
 		</Prose>
-		{
-			image && (
-				<figure class="mt-9 mb-9">
-					<Image width={1200} height={800} src={image} alt={imageAlt ?? ""} />
-					<figcaption class="mt-2 text-xs text-center">{caption}</figcaption>
-				</figure>
-			)
-		}
+		{image && <Figure src={image?.src} alt={imageAlt ?? ""} caption={caption} />}
 		<Prose class="">
 			<slot />
 			<hr />
 			<p class="italic">
-				<a data-astro-prefetch href="/" class="font-garamond font-normal text-lg lg:text-xl">The Dolent Chronicle</a> is an RPG blog produced by Dante Nardo. If
-				you liked this post, please consider sharing it on whatever doomed planes you reside.
+				<a data-astro-prefetch href="/" class="font-garamond font-normal text-lg lg:text-xl">The Dolent Chronicle</a>
+				is an RPG blog produced by Dante Nardo. If you liked this post, please consider sharing it on whatever doomed planes you reside.
 			</p>
 			<!-- <a
 				target="_blank"

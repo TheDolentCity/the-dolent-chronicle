@@ -12,5 +12,5 @@ const { src, alt, caption } = Astro.props;
 
 <figure class="mt-9 mb-9">
 	<Image width={1200} height={800} src={src} alt={alt} />
-	{caption && <figcaption class="mt-2 text-xs text-center">{caption}</figcaption>}
+	{caption && <figcaption class="mt-2 !text-xs text-center">{caption}</figcaption>}
 </figure>

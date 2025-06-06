@@ -55,7 +55,7 @@ const { posts } = Astro.props;
 <BaseLayout title={tag ?? SITE_TITLE} description="Posts with the provided tag.">
 	<section class="max-w-[64rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose>
-			<div class="flex gap-4 items-end justify-between capitalize">
+			<div class="flex gap-4 items-center justify-between">
 				<PageHeader>
 					{tag}
 					<PageHomeButton />

@@ -18,6 +18,9 @@ export default defineConfig({
 		remarkPlugins: [remarkReadingTime],
 	},
 	prefetch: true,
+	redirects: {
+		"/posts/review-runecairn-bestiary" : "/posts/play-critica-runecairn-bestiary"
+	},
 	vite: {
 		plugins: [mdx(), sitemap(), tailwindcss()],
 	},

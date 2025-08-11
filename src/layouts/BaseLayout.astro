@@ -31,8 +31,7 @@ const themeScript = `
 <html lang="en">
 	<head>
 		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} image={image} />
-		<script set:html={themeScript} />
-
+		<script is:inline set:html={themeScript} />
 		<!-- Fixes Flash-Of-Unstyled-Content by requiring client-side css to load to make page visible -->
 		<style is:inline>
 			body {

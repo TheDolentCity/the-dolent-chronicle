@@ -1,17 +1,26 @@
 import type { CollectionEntry } from "astro:content";
 import { FormattedDate } from "@/components/time/FormattedDate";
+import { CirclePlus } from "lucide-react";
 
 type Post = CollectionEntry<"posts">;
 
 export function PostList({ posts }: { posts: Post[] }) {
 	return (
 		<ul className="not-prose">
-			{
-				posts.map((post) => (
-					<PostListItem key={post.id} post={post} />
-				))
-			}
+			{posts.map((post) => (
+				<PostListItem key={post.id} post={post} />
+			))}
 		</ul>
+	);
+}
+
+export function PostListLoadMoreButton() {
+	return (
+		<div className="not-prose flex mt-2 justify-center">
+			<a href="/posts" className="flex gap-1.5 px-2 py-1.5 items-center rounded leading-none text-xs font-medium bg-zinc-400/25 dark:bg-zinc-900 dark:hover:bg-zinc-800 mst">
+				<CirclePlus size="14" /> See more
+			</a>
+		</div>
 	);
 }
 
@@ -25,7 +34,13 @@ function PostListItem({ post }: { post: Post }) {
 	);
 }
 
-function PostListItemLink({ id, children }: { id: string, children: React.ReactNode }) {
+function PostListItemLink({
+	id,
+	children,
+}: {
+	id: string;
+	children: React.ReactNode;
+}) {
 	return (
 		<li>
 			<a
@@ -41,7 +56,9 @@ function PostListItemLink({ id, children }: { id: string, children: React.ReactN
 
 function PostListItemTitle({ title }: { title: string }) {
 	return (
-		<h4 className="flex-none truncate text-zinc-900 dark:text-zinc-100">{title}</h4>
+		<h4 className="flex-none truncate text-zinc-900 dark:text-zinc-100">
+			{title}
+		</h4>
 	);
 }
 

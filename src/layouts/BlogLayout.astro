@@ -1,11 +1,12 @@
 ---
 import { FormattedDate } from "@/components/time/FormattedDate";
-import { PageHeader } from "@/components/app/PageHeader";
+import { PageTitle } from "@/components/app/PageTitle";
 import { PageDescription } from "@/components/app/PageDescription";
 import { PageHomeButton } from "@/components/app/PageHomeButton";
 import BaseLayout from "./BaseLayout.astro";
 import Figure from "@/components/markdown/Figure.astro";
 import Prose from "@/components/markdown/Prose.astro";
+import { PageHeader } from "@/components/app/PageHeader";
 
 interface Props {
 	title: string;
@@ -25,8 +26,10 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 	<article class="max-w-[70rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose class="mx-auto">
 			<PageHeader>
-				{title}
 				<PageHomeButton />
+				<PageTitle>
+					{title}
+				</PageTitle>
 			</PageHeader>
 			<PageDescription>
 				{description}

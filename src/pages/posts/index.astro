@@ -1,37 +1,23 @@
 ---
 import { PageDescription } from "@/components/app/PageDescription";
 import { PageHeader } from "@/components/app/PageHeader";
+import { PageHomeButton } from "@/components/app/PageHomeButton";
 import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
-import { PostList, PostListLoadMoreButton } from "@/components/posts/Posts";
-import { TagList } from "@/components/tags/Tags";
+import { PostList } from "@/components/posts/Posts";
 import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { mapAndCountTags } from "@/utils/post-utilities";
 import { getCollection } from "astro:content";
 
 // Get sorted posts
 const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
-
-// Get all tags from posts
-const allTags = [
-	...posts
-		.map((post) => post.data.tags)
-		.flat()
-		.sort(),
-];
-
-// Count the instance of each tag
-const tags = mapAndCountTags(allTags);
-
-const recentPosts = posts.splice(0, 10);
-const mostTags = tags.splice(0, 100);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<PageSection>
 		<PageHeader>
+			<PageHomeButton />
 			<PageTitle>
 				{SITE_TITLE}
 			</PageTitle>
@@ -41,8 +27,6 @@ const mostTags = tags.splice(0, 100);
 			{SITE_DESCRIPTION}
 		</PageDescription>
 		<hr />
-		<PostList posts={recentPosts} />
-		<PostListLoadMoreButton />
-		<TagList tags={mostTags} />
+		<PostList posts={posts} />
 	</PageSection>
 </BaseLayout>

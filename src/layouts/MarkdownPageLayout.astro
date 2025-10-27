@@ -1,5 +1,5 @@
 ---
-import { PageHeader } from "@/components/app/PageHeader";
+import { PageTitle } from "@/components/app/PageTitle";
 import { PageDescription } from "@/components/app/PageDescription";
 import Prose from "@/components/markdown/Prose.astro";
 import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
@@ -25,7 +25,7 @@ const { frontmatter } = Astro.props;
 		<Prose class="mx-auto">
 			<div class="mb-4">
 				<div class="flex gap-2 justify-between items-end">
-					<PageHeader>
+					<PageTitle>
 						{frontmatter.title}
 						<a
 							data-astro-prefetch
@@ -35,7 +35,7 @@ const { frontmatter } = Astro.props;
 						>
 							<MoveLeft className="size-4 lg:size-6" />
 						</a>
-					</PageHeader>
+					</PageTitle>
 				</div>
 				<PageDescription>
 					{frontmatter.description}

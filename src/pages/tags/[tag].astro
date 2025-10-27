@@ -3,7 +3,7 @@ import { getCollection, type InferEntrySchema, type RenderedContent } from "astr
 import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Prose from "@/components/markdown/Prose.astro";
-import { PageHeader } from "@/components/app/PageHeader";
+import { PageTitle } from "@/components/app/PageTitle";
 import { PageDescription } from "@/components/app/PageDescription";
 import { PostList } from "@/components/posts/Posts";
 import { PageHomeButton } from "@/components/app/PageHomeButton";
@@ -56,10 +56,10 @@ const { posts } = Astro.props;
 	<section class="max-w-[64rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose>
 			<div class="flex gap-4 items-center justify-between">
-				<PageHeader>
+				<PageTitle>
 					{tag}
 					<PageHomeButton />
-				</PageHeader>
+				</PageTitle>
 				<ThemeSelect client:only="react" className="not-md:hidden" />
 			</div>
 			<PageDescription>All posts with the {tag} tag on the blog.</PageDescription>

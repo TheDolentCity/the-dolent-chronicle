@@ -8,6 +8,8 @@ import { PageDescription } from "@/components/app/PageDescription";
 import { PostList } from "@/components/posts/Posts";
 import { PageHomeButton } from "@/components/app/PageHomeButton";
 import { SITE_TITLE } from "@/constants";
+import { PageHeader } from "@/components/app/PageHeader";
+import PageSection from "@/components/app/PageSection.astro";
 
 interface Post {
 	id: string;
@@ -53,18 +55,16 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout title={tag ?? SITE_TITLE} description="Posts with the provided tag.">
-	<section class="max-w-[64rem] mx-auto pt-16 md:pt-32 pb-16">
-		<Prose>
-			<div class="flex gap-4 items-center justify-between">
-				<PageTitle>
-					{tag}
-					<PageHomeButton />
-				</PageTitle>
-				<ThemeSelect client:only="react" className="not-md:hidden" />
-			</div>
-			<PageDescription>All posts with the {tag} tag on the blog.</PageDescription>
-			<hr />
-			<PostList posts={posts} />
-		</Prose>
-	</section>
+	<PageSection>
+		<PageHeader>
+			<PageHomeButton />
+			<PageTitle>
+				<span class="capitalize">{tag}</span>
+			</PageTitle>
+			<ThemeSelect client:only="react" className="not-md:hidden" />
+		</PageHeader>
+		<PageDescription>All posts with the {tag} tag on the blog.</PageDescription>
+		<hr />
+		<PostList posts={posts} />
+	</PageSection>
 </BaseLayout>

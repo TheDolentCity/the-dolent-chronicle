@@ -1,18 +1,18 @@
 ---
 title: "Workbench — Soulslikes"
 description: A series where I talk about what I'm working on. In this post, I cover the challenges of designing a Soulslike roleplaying game.
-published: Dec 2 2025
+published: Dec 6 2025
 image: ./dark-souls-remastered.webp
 imageAlt: A distorted, halftone image of the dark souls remastered banner art.
 caption: "Thou who art Undead, art chosen..."
-tags: [RPG, dark-fantasy, design, soulslike, workbench]
+tags: [RPG, dark-fantasy, design, fantasy, soulslike, workbench]
 ---
 
 import { Aside } from "@/components/markdown/Aside.tsx";
 
-For [National Game Design Month](https://nagademon.org/), I had the idea to make a minimalist Soulslike RPG system and adventure. I'm far from the first person to have this idea. Many Soulslike RPGs can be found on [itch.io](https://itch.io/physical-games/tag-souls-like). Some of my favorites include *[Exhumed](https://jasontocci.itch.io/exhumed)*, *[Runecairn](https://byodinsbeardrpg.itch.io/runecairn)*, and *[Radikal Souls](https://snowttrpg.itch.io/radikal-souls)*.
+For [National Game Design Month](https://nagademon.org/), I made a minimalist Soulslike RPG system and adventure titled **Hollow**. I'm far from the first person to have this idea. Many Soulslike RPGs can be found on [itch.io](https://itch.io/physical-games/tag-souls-like). Some of my favorites include *[Exhumed](https://jasontocci.itch.io/exhumed)*, *[Runecairn](https://byodinsbeardrpg.itch.io/runecairn)*, and *[Radikal Souls](https://snowttrpg.itch.io/radikal-souls)*.
 
-As I started designing the game I stumbled across several design problems. Most of these stem from the change in medium; a realtime video game that relies on timing precise button presses and absurd setting logic like your corpse disappearing and reappearing at a bonfire is not the easiest thing to adapt to a tabletop world!
+As I wrote the game text I stumbled across several design problems. Most of these stem from the change in medium. *Dark Souls* is a realtime video game that relies on timing precise button presses and absurd setting logic like teleporting to bonfires and reappearing there when you die. This is not the easiest thing to adapt to a tabletop world!
 
 I'm going to cover the most challenging aspects of this adaptation in detail and both my initial and my amended solutions post-playtest. For context, I refer to the optional setting included with the game as *The Grafted Palace*.
 
@@ -20,37 +20,19 @@ I'm going to cover the most challenging aspects of this adaptation in detail and
 
 If you want, jump to the challenge that you're most interested in:
 
-1. [Checkpoints](#checkpoints)
 1. [Respawning](#respawning)
+1. [Losing Souls](#losing-souls)
+1. [Fast Travel](#fast-travel)
+1. [Farming XP](#farming-xp)
 1. [Damage](#damage)
 1. [Blocking](#blocking)
 1. [Dodging](#dodging)
 1. [Parrying](#parrying)
-1. [Fast Travel](#fast-travel)
-1. [Farming XP](#farming-xp)
-
-## Checkpoints
-
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="TODO">
-</Aside>
-
-TODO
-
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="TODO">
-</Aside>
 
 ## Respawning
 
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="When you die you lose 1 humanity and become a shade. At 0 humanity you go HOLLOW and turn in your character sheet. After 24 hours, you return to life where you die fully restored to health.">
+<Aside type="question" title="Initial Solution">
+  When you die you lose 1 humanity and become a shade. At 0 humanity you go **HOLLOW** and turn in your character sheet. After 24 hours, you return to life where you die fully restored to health.
 </Aside>
 
 Oh boy. This rule was so bad I changed it the first time we used it in the playtest. There is something I like about the 24 hours of being a shade, but practically speaking it means that either dead characters are waiting around while living characters play or vice versa. I do have a rule that when undead die they can act as a shade, granting stamina/focus to allies or manipulating the world like a ghost (blatantly stolen from *Exhumed*), but it felt like we were all just waiting for the Warrior to return to life during the session.
@@ -59,110 +41,106 @@ Additionally, I was worried about the setting ramifications of presto-respawning
 
 Others may disagree, but I want as little of that video game logic as possible in a Soulslike tabletop RPG. I want an internally consistent world to play in. This is why I had dead characters return to their corpses when they died rather than their last checkpoint. In practice, this became a huge issue as characters were "trapped" in dangerous locations and living characters were dragging corpses around to safe spots on the map.
 
-I'm not afraid to say it: **there was too much corpse dragging for my taste.**  
+I'm not afraid to say it: **there was too much corpse dragging for my taste.**
 
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="You return to life a few minutes after you die and you reappear at the last checkpoint you reached. Different settings should create in-world justifications for the disappearance and reappearance of your body. In The Grafted Palace, checkpoints are saplings and player characters are 'scions' of palace nobility that were once connected to the rootstock of this world. Through this connection, they are able to heal at saplings and revive at the last sapling they touched.">
+<Aside type="tip" title="Amended Solution">
+  You return to life a few minutes after you die and you reappear at the last checkpoint you reached. Different settings should create in-world justifications for the disappearance and reappearance of your body. In *The Grafted Palace*, checkpoints are saplings and player characters are noble 'Scions' connected to the Rootstock of this world. Through this connection, they are able to heal at saplings and revive at the last sapling they touched.
 </Aside>
 
-## Damage
+## Losing Souls
 
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="Player attacks dealt 1, 2, 3, or 4 damage based on GM discretion. Most attacks would do 2 damage, but the GM could increase or decrease it based on the effectiveness of a player's perceived action.">
+<Aside type="question" title="Initial Solution">
+  When a character dies, they lose all of their souls. These souls cannot be reclaimed in any way. However, a character can store souls at any checkpoint they find (up to the amount of souls they need to level up).
 </Aside>
 
-From my perspective, this worked well. At least one player seemed confused by it though and remarked how they couldn't figure out "how weapons work". Diegetic bonuses and penalties in tabletop RPGs are difficult for many people to wrap their head around. To me, a halberd is obviously a bad weapon to fight with on a stairway, a spear can poke from a safer distance than an axe can swing. A dagger is useful when grappling. I think I found a way to rewrite the rules to be easier to understand though. 
+The runback is a staple of early Soulslikes. For the unfamiliar, players would drop all of their souls where they died and respawn at their last checkpoint. If they brave the trials that led to their death, they can pick up and reclaim all of their lost souls, but if they die before that happens the souls are lost forever.
 
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="Weapons have a base damage, usually 2 or 3, and the section that explained how to choose between 1-4 damage has instead been tweaked to decide on a -2 to +2 modifier to a weapon attack based on how effective it is. For example, a melee attack against a prone target might get +1.">
-</Aside>
+The repetition of runbacks is formulaic for a video game, but daunting for a tabletop RPG. While a runback through *Elden Ring*'s Subterranean Shunning Grounds might take one minute, the same experience in a tabletop RPG could take hours. For this reason, I needed to remove runbacks and instead rely on players storing souls and .
 
-## Blocking
+On the one hand, you can argue this reduces the risk of death since you can store all your souls, attempt a difficult enemy, and suffer nothing if you die. On the other hand, if you encounter a tough enemy unprepared, you might lose all of your souls at once, which is more punishing than a normal Soulslike.
 
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="Blocking was the lowest cost reaction. You could spend 1 stamina to reduce damage by 1 (or 2 if you had a shield). Some attacks like grabs cannot be blocked.">
-</Aside>
-
-Blocking was seen as an easy way to spend very little stamina and protect yourself. A player using the high-stamina, no-armor Knave class wanted to block with their dagger rather than dodge, something that you would never see in a Soulslike game. This told me I needed to rework blocking.
-
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="Blocking now costs 3 stamina (more than dodging) and reduces damage by 4. Shields reduce damage by 5 instead. This emulates the behavior of a Soulslike where a block is a 'safe' option, especially against high damage attacks. However, blocking repeatedly will quickly deplete your stamina and the highest damage attacks can only be reduced to 0 by the dodge reaction.">
-</Aside>
-
-## Dodging
-
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="Dodging cost 2 stamina and you reduced the damage of an attack by d4-1, d4, or d4+1 depending on the armor you wore. More armor, worse dodge.">
-</Aside>
-
-Dodging was fine, but felt random and costly enough that players sometimes chose to block instead. Another issue was that there was no benefit to memorizing or recognizing an enemy's attack. If a player realized an enemy was going to do their 5 damage attack instead of their 2 damage attack, they couldn't go out of their way to decrease the damage—it was up to a die roll.
-
-In a Soulslike, learning an enemy's attack patterns is key to success, but if there is no benefit to learning how to react to the attack, then this aspect goes away.
-
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="Players now spend as much stamina as they want when they dodge. Each point of stamina reduces the damage by 1, but they must choose how much they want to spend before they know the damage. Wearing heavy armor decreases the total damage reduction by 1 and no armor increases it by 1. A character in light armor (-1 damage) can recognize when an attack will do 2 damage and spend 1 stamina to negate all damage and also learn when an NPC does 5 damage and spend the 4 necessary stamina to negate the damage of that attack as well. As long as they manage their stamina and time their dodges, they cannot be hurt.">
-</Aside>
-
-## Parrying
-
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="In the playtest, there was only one enemy who could parry. I wrote that they could only parry 'slow' attacks that they did 0 damage when the NPC blocked (and taking armor into account) and that this left the attacker vulnerable to a critical hit on the NPC's next turn.">
-</Aside>
-
-I did get to parry the Warrior's charged longaxe attack and hit him with a crit, but it wasn't very satisfying for player or GM. It felt almost arbitrary that the block was a parry. No skill, just a shielding NPC with a massive threat to a melee character. How does anyone attack that enemy type in melee in the future? Is there any way to avoid the parry from the player's POV?
-
-<Aside
-  type="alert"
-  title="Solution In Progress"
-  children="I didn't find a great solution to this one. I'm currently thinking of doing something akin to the old dodge where if you have a parryable shield/weapon, when you perform the block reaction you roll a d4 and if the value is equal to the damage, then the attack is parried and the attacker staggered, otherwise it's a normal block reaction. I do not like this solution however and I'm exploring other ideas.">
-</Aside>
+In practice, I found this rule roughly an equal amount of risk to normal Soulslike soul mechanics and did not end up changing it post-playtest.
 
 ## Fast Travel
 
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="Characters could not fast travel in the first iteration.">
+<Aside type="question" title="Initial Solution">
+  Characters could not fast travel in the first iteration.
 </Aside>
 
 In most Soulslikes, there is a safe hub that players routinely return to after exploring the world. NPCs come and go, but often provide services in exchange for souls. Players can also fast travel from the hub to almost any location in the world they've already explored (although some Soulslikes make this an unlock).
 
 I originally did not want any form of fast travel as it felt incredibly video gamey to me. However, as I saw players interact with the local map and ask if they could just "return" to previous locations they'd explored I realized that wasn't too different from fast travel at the table. So I added some fast travel rules. 
 
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="Fast travel can be performed from the Hub. In The Grafted Palace, this is the Rootstock Shrine, a deep place where all the roots of the world meet. The Dormant Maiden can be found here. She teaches Scions how to fast travel to saplings in the world by touching the roots.">
+<Aside type="tip" title="Amended Solution">
+  Fast travel can be performed from the Hub. In *The Grafted Palace*, this is the Rootstock Shrine, a deep place where all the roots of the world meet. The Dormant Maiden can be found here. She teaches Scions how to fast travel to saplings in the world by touching the roots.
 </Aside>
 
 ## Farming XP
 
-<Aside
-  type="question"
-  title="Initial Solution"
-  children="TODO">
+<Aside type="question" title="Initial Solution">
+  Enemies are either 'field enemies' that disappear forever when defeated or encounter enemies. Certain locations require the GM roll for a d6 for an encounter any time characters enter. Players can explore encounter locations over and over again to defeat enemies and gain XP.
 </Aside>
 
-TODO
+Farming XP is common behavior in Soulslikes. Sometimes you just need 10 more points in Vigor to beat a boss you're stuck on. While this is boring in a video game, it is infinitely more boring and time consuming in a tabletop RPG. The players still engaged with this mechanic though as they wanted to level up before pushing into what they viewed as the more dangerous parts of the module.
 
-<Aside
-  type="tip"
-  title="Amended Solution"
-  children="TODO">
+I want to disincentivize this behavior and encourage players to explore more naturally and take on fights instead of walking around the easiest areas and backstabbing mindless hollows that are worth barely any souls. That's not fun for players or the GM.
+
+<Aside type="question" title="Solution-In-Progress">
+  Instead of a static encounter roll, the encounter die starts at d4 and increases in size each time you explore an area. Higher number encounters are significantly harder so that farming enemies poses a threat to your acquired souls. I think this system could still use some improvement, but it's a start.
 </Aside>
+
+## Damage
+
+<Aside type="question" title="Initial Solution">
+  Player attacks dealt 1, 2, 3, or 4 damage based on GM discretion. Most attacks would do 2 damage, but the GM could increase or decrease it based on the effectiveness of a player's perceived action.
+</Aside>
+
+From my perspective, this worked well. At least one player seemed confused by it though and remarked how they couldn't figure out "how weapons work". Diegetic bonuses and penalties in tabletop RPGs are difficult for many people to wrap their head around. To me, a halberd is obviously a bad weapon to fight with on a stairway. A spear can poke from a safer distance than an axe can swing. A dagger is perfect for grappling. I think I found a way to rewrite the rules to be easier to understand though.
+
+<Aside type="tip" title="Amended Solution">
+  Weapons have a base damage, usually 2 or 3, and the section that explained how to choose between 1-4 damage has instead been tweaked to decide on a -2 to +2 modifier to a weapon attack based on how effective it is. For example, a melee attack against a prone target might get +1.
+</Aside>
+
+## Blocking
+
+<Aside type="question" title="Initial Solution">
+  Blocking was the lowest cost reaction. You could spend 1 stamina to reduce damage by 1 (or 2 if you had a shield). Some attacks like grabs cannot be blocked.
+</Aside>
+
+Blocking was seen as an easy way to spend very little stamina and protect yourself. A player using the high-stamina, no-armor Knave class wanted to block with their dagger rather than dodge, something that you would never see in a Soulslike game. This told me I needed to rework blocking.
+
+<Aside type="tip" title="Amended Solution">
+  Blocking now costs 3 stamina (more than dodging) and reduces damage by 4. Shields reduce damage by 5 instead. This emulates the behavior of a Soulslike where a block is a 'safe' option, especially against high damage attacks. However, blocking repeatedly will quickly deplete your stamina and the highest damage attacks can only be reduced to 0 by the dodge reaction.
+</Aside>
+
+## Dodging
+
+<Aside type="question" title="Initial Solution">
+  Dodging cost 2 stamina and you reduced the damage of an attack by d4-1, d4, or d4+1 depending on the armor you wore. More armor, worse dodge.
+</Aside>
+
+Dodging was fine, but felt random and costly enough that players sometimes chose to block instead. Another issue was that there was no benefit to memorizing or recognizing an enemy's attack. If a player realized an enemy was going to do their 5 damage attack instead of their 2 damage attack, they couldn't go out of their way to decrease the damage—it was up to a die roll.
+
+In a Soulslike, learning an enemy's attack patterns is key to success, but if there is no benefit to learning how to react to the attack, then this aspect goes away.
+
+<Aside type="tip" title="Amended Solution">
+  Players now spend as much stamina as they want when they dodge. Each point of stamina reduces the damage by 1, but they must choose how much they want to spend before they know the damage. Wearing heavy armor decreases the total damage reduction by 1 and no armor increases it by 1. A character in light armor (-1 damage) can recognize when an attack will do 2 damage and spend 1 stamina to negate all damage and also learn when an NPC does 5 damage and spend the 4 necessary stamina to negate the damage of that attack as well. As long as they manage their stamina and time their dodges, they cannot be hurt.
+</Aside>
+
+## Parrying
+
+<Aside type="question" title="Initial Solution">
+  In the playtest, there was only one enemy who could parry. I wrote that they could only parry 'slow' attacks that did 0 damage when the NPC blocked (taking armor into account) and that this left the attacker vulnerable to a critical hit on the NPC's next turn.
+</Aside>
+
+I did get to parry the Warrior's charged longaxe attack and hit him with a crit, but it wasn't very satisfying for player or GM. It felt almost arbitrary that the block was a parry. No skill, just a shielding NPC with a massive threat to a melee character. How does anyone attack that enemy type in melee in the future? Is there any way to avoid the parry from the player's POV?
+
+<Aside type="alert" title="Solution In Progress">
+  I didn't find a great solution to this one. I'm currently thinking of doing something akin to the old dodge where if you have a parryable shield/weapon, when you perform the block reaction you roll a d4 and if the value is equal to the damage, then the attack is parried and the attacker staggered, otherwise it's a normal block reaction. I do not like this solution however and I'm exploring other ideas.
+</Aside>
+
+## Final Thoughts
+
+I went back on a lot of my early decisions regarding "realism" and instead leaned into a few of the more gamey elements of Soulslikes. I have other dark fantasy games that are more focused on realism; **Hollow** can remain a purer Soulslike implementation.
+
+If you're interested in **Hollow** or the starting adventure for *The Grafted Palace*, stay tuned. I hope to release an Ashcan version for free around the end of December.

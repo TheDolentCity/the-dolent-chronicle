@@ -1,8 +1,6 @@
 ---
 import { getCollection, type InferEntrySchema, type RenderedContent } from "astro:content";
-import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Prose from "@/components/markdown/Prose.astro";
 import { PageTitle } from "@/components/app/PageTitle";
 import { PageDescription } from "@/components/app/PageDescription";
 import { PostList } from "@/components/posts/Posts";
@@ -61,7 +59,6 @@ const { posts } = Astro.props;
 			<PageTitle>
 				<span class="capitalize">{tag}</span>
 			</PageTitle>
-			<ThemeSelect client:only="react" className="not-md:hidden" />
 		</PageHeader>
 		<PageDescription>All posts with the {tag} tag on the blog.</PageDescription>
 		<hr />

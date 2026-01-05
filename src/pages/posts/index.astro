@@ -5,7 +5,6 @@ import { PageHomeButton } from "@/components/app/PageHomeButton";
 import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
 import { PostList } from "@/components/posts/Posts";
-import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
@@ -21,7 +20,6 @@ const posts = (await getCollection("posts")).sort((a, b) => b.data.published.val
 			<PageTitle>
 				{SITE_TITLE}
 			</PageTitle>
-			<ThemeSelect client:only="react" className="not-md:hidden" />
 		</PageHeader>
 		<PageDescription>
 			{SITE_DESCRIPTION}

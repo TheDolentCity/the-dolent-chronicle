@@ -5,7 +5,6 @@ import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
 import { PostList, PostListLoadMoreButton } from "@/components/posts/Posts";
 import { TagList } from "@/components/tags/Tags";
-import { ThemeSelect } from "@/components/themes/ThemeSelect";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { mapAndCountTags } from "@/utils/post-utilities";
@@ -35,7 +34,6 @@ const mostTags = tags.splice(0, 100);
 			<PageTitle>
 				{SITE_TITLE}
 			</PageTitle>
-			<ThemeSelect client:only="react" className="not-md:hidden" />
 		</PageHeader>
 		<PageDescription>
 			{SITE_DESCRIPTION}

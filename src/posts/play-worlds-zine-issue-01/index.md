@@ -24,4 +24,6 @@ Play Worlds is a small collective of tabletop RPG enthusiasts who have spent tim
 
 While our personal tastes and methods vary, our focus on playing games, game creation, and adventure design have proven fruitful. Our zine represents the tip of the iceberg when it comes to these discussions.
 
-## Want to find some more Play Worlds projects? [Click here!](https://itch.io/c/6804424/contributor-projects)
+### Want to find some more Play Worlds projects? [Click here!](https://itch.io/c/6804424/contributor-projects)
+
+### Want to join the Discord server? [Click here!](https://discord.gg/8fpvqsS87Q)

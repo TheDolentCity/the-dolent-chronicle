@@ -1,13 +1,14 @@
 ---
 import { PageDescription } from "@/components/app/PageDescription";
 import { PageHeader } from "@/components/app/PageHeader";
+import { PageNewsletterButton } from "@/components/app/PageNewsletterButton";
 import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
 import { PostList, PostListLoadMoreButton } from "@/components/posts/Posts";
 import { TagList } from "@/components/tags/Tags";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { mapAndCountTags } from "@/utils/post-utilities";
+import { mapAndCountTags } from "@/utilities/post-utilities";
 import { getCollection } from "astro:content";
 
 // Get sorted posts
@@ -31,6 +32,7 @@ const mostTags = tags.splice(0, 100);
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<PageSection>
 		<PageHeader>
+			<PageNewsletterButton />
 			<PageTitle>
 				{SITE_TITLE}
 			</PageTitle>

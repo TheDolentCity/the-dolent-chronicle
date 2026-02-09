@@ -1,0 +1,79 @@
+---
+import { actions } from "astro:actions";
+import { Check } from "lucide-react";
+
+// Retrieve the result of the signup action for UI display
+const signup = Astro.getActionResult(actions.newsletter.signup);
+
+// If the signup result exists, no need to fetch topics
+const topics = signup?.data && !signup?.error ? null : await Astro.callAction(actions.newsletter.getTopics, {});
+
+const showSignupResponse = signup?.data && !signup?.error;
+const showTopicsErrorResponse = topics?.error && !signup?.data;
+const showSignupForm = !showSignupResponse && topics?.data && !topics?.error;
+const showSignupErrorResponse = signup?.error;
+const signupError =
+	signup?.error && signup.error.code == "BAD_REQUEST"
+		? "Please confirm your email is valid and you selected at least one topic to subscribe to."
+		: signup?.error?.message;
+---
+
+{showSignupResponse && <p class="text-emerald-700 dark:text-emerald-500">{signup.data}</p>}
+
+{
+	showTopicsErrorResponse && (
+		<div>
+			<h2 class="text-2xl mb-2 text-zinc-50 dark:text-zinc-950">Something went wrong...</h2>
+			<p>We're unable to load the newsletter form right now. Please check back later.</p>
+		</div>
+	)
+}
+
+{
+	showSignupForm && (
+		<form method="POST" action={actions.newsletter.signup} class="w-full h-full">
+			<label for="website">
+				<input id="website" type="text" maxlength="1000" class="website" />
+			</label>
+			<label for="email">
+				<div class="mb-1 text-sm all-small-caps font-semibold">Email</div>
+				<input
+					id="email"
+					required
+					maxlength="100"
+					type="email"
+					name="email"
+					placeholder="placeholder@email.com"
+					class="w-full p-3 text-sm rounded border border-zinc-400 text-zinc-950 bg-white dark:border-zinc-700 dark:text-zinc-50 dark:bg-black focus:outline-2 focus:dark:outline-zinc-50 mst"
+				/>
+			</label>
+			<fieldset class="mt-4">
+				<legend class="text-sm all-small-caps font-semibold">Subscription topics</legend>
+				{topics?.data?.map((topic) => (
+					<label class="relative flex gap-1.5 mt-2 items-center">
+						<input
+							type="checkbox"
+							id={topic.id}
+							name="topics"
+							title={`Toggle ${topic.name}`}
+							value={topic.id}
+							checked
+							class="appearance-none peer size-6 rounded border-2 border-zinc-400 bg-white checked:border-zinc-950 checked:bg-black dark:border-zinc-700 checked:dark:border-zinc-50 checked:dark:bg-zinc-50 dark:bg-black focus:outline-2 focus:outline-offset-2 focus:outline-zinc-950 focus:dark:outline-zinc-50"
+						/>
+						<Check className="absolute left-1 bottom-1 size-4 invisible peer-checked:visible text-white dark:text-black" />
+						<span class="text-base text-zinc-950 dark:text-zinc-50">{topic.name}</span>
+					</label>
+				))}
+			</fieldset>
+			{showSignupErrorResponse && <p class="mt-4 text-sm text-red-700 dark:text-red-500">{signupError}</p>}
+			<div class="flex mt-4 justify-end">
+				<button
+					type="submit"
+					class="px-3 pt-2.5 pb-3 rounded border border-zinc-300 dark:border-zinc-700 all-small-caps font-semibold leading-none cursor-pointer text-white bg-zinc-900 hover:bg-zinc-800 active:bg-zinc-700 dark:text-black dark:bg-zinc-100 dark:hover:bg-zinc-300 dark:active:bg-zinc-400 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-zinc-950 dark:focus-visible:outline-zinc-50 mst"
+				>
+					Subscribe
+				</button>
+			</div>
+		</form>
+	)
+}

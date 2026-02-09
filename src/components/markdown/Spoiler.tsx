@@ -1,4 +1,4 @@
-import { CssBuilder } from "@/utils/css-builder";
+import { CssBuilder } from "@/utilities/css-builder";
 import { useState, type ReactNode } from "react";
 
 export function Spoiler({ children }: { children: ReactNode }) {

@@ -1,0 +1,28 @@
+---
+import { PageDescription } from "@/components/app/PageDescription";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageHomeButton } from "@/components/app/PageHomeButton";
+import PageSection from "@/components/app/PageSection.astro";
+import { PageTitle } from "@/components/app/PageTitle";
+import NewsletterSignup from "@/components/forms/NewsletterSignup.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const prerender = false;
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<PageSection>
+		<PageHeader>
+			<PageHomeButton />
+			<PageTitle>
+				{SITE_TITLE} — Newsletter
+			</PageTitle>
+		</PageHeader>
+		<PageDescription>Add your email to be notified of new blog posts and product launches. Unsubscribe anytime.</PageDescription>
+		<hr />
+		<div class="not-prose flex w-full p-8 text-base rounded-xl border border-zinc-400 bg-zinc-200 dark:border-zinc-700 dark:bg-black">
+			<NewsletterSignup />
+		</div>
+	</PageSection>
+</BaseLayout>

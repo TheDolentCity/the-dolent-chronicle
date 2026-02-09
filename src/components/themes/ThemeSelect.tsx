@@ -1,6 +1,6 @@
 import { themeStore } from "@/stores/theme-store";
 import { Themes } from "@/types/themes";
-import { LocalStorageKeys } from "@/utils/localStorage";
+import { LocalStorageKeys } from "@/utilities/localStorage";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { MonitorCog, Moon, Sun } from "lucide-react";
@@ -77,10 +77,19 @@ export function ThemeSelect({ className }: { className?: string | undefined }) {
 	);
 }
 
-function ThemeSelectRadioGroup({ className, children }: { className?: string | undefined, children: React.ReactNode }) {
+function ThemeSelectRadioGroup({
+	className,
+	children,
+}: {
+	className?: string | undefined;
+	children: React.ReactNode;
+}) {
 	return (
 		<div
-			className={clsx("relative inline-flex p-0.5 items-center rounded-full bg-zinc-400/25 dark:bg-zinc-900 mst", className)}
+			className={clsx(
+				"relative inline-flex p-0.5 items-center rounded-full bg-zinc-400/25 dark:bg-zinc-900 mst",
+				className,
+			)}
 			role="radiogroup"
 		>
 			{children}
@@ -95,7 +104,7 @@ function ThemeSelectRadioIndicator({ theme }: { theme: Themes }) {
 				"transition-left absolute top-0.5 h-7 w-7 rounded-full bg-zinc-100 dark:bg-zinc-950 mst",
 				theme === Themes.Auto && "left-0.5",
 				theme === Themes.Light && "left-[30px]",
-				theme === Themes.Dark && "left-[58px]"
+				theme === Themes.Dark && "left-[58px]",
 			)}
 		></div>
 	);
@@ -118,7 +127,7 @@ function ThemeSelectRadioOption({
 				"relative inline-flex h-7 w-7 items-center justify-center cursor-pointer",
 				theme === currentTheme
 					? "text-zinc-900 dark:text-zinc-300"
-					: "text-zinc-500 dark:text-zinc-500"
+					: "text-zinc-500 dark:text-zinc-500",
 			)}
 			onClick={() => changeTheme(theme)}
 			onKeyDown={(e) => {

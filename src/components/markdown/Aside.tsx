@@ -1,4 +1,4 @@
-import { CssBuilder } from "@/utils/css-builder";
+import { CssBuilder } from "@/utilities/css-builder";
 import {
 	BookOpenText,
 	CircleCheck,
@@ -31,8 +31,8 @@ export function Aside(props: AsideProps) {
 			"Invalid `type` prop passed to the `<Aside>` component.\n" +
 				`Received: ${JSON.stringify(props.type)}\n` +
 				`Expected one of ${AsideVariants.map((i) => JSON.stringify(i)).join(
-					", "
-				)}`
+					", ",
+				)}`,
 		);
 	}
 
@@ -41,27 +41,27 @@ export function Aside(props: AsideProps) {
 
 	const asideCss = new CssBuilder()
 		.addClass(
-			"not-prose dark:saturate-50 my-4 lg:my-8 p-4 border-l-4 text-base"
+			"not-prose dark:saturate-50 my-4 lg:my-8 p-4 border-l-4 text-base",
 		)
 		.addClass(
 			"border-blue-800 dark:border-blue-400 text-zinc-700 dark:text-zinc-300 bg-blue-100/50 dark:bg-blue-950/50",
-			type == "example"
+			type == "example",
 		)
 		.addClass(
 			"border-blue-800 dark:border-blue-400 text-zinc-700 dark:text-zinc-300 bg-blue-100/50 dark:bg-blue-950/50",
-			type == "info"
+			type == "info",
 		)
 		.addClass(
 			"border-negative-800 dark:border-negative-400 text-zinc-700 dark:text-zinc-300 bg-negative-100/50 dark:bg-negative-950/50",
-			type == "alert"
+			type == "alert",
 		)
 		.addClass(
 			"border-warning-800 dark:border-warning-400 text-zinc-700 dark:text-zinc-300 bg-warning-100/50 dark:bg-warning-950/50",
-			type == "question"
+			type == "question",
 		)
 		.addClass(
 			"border-accent-800 dark:border-accent-400 text-zinc-700 dark:text-zinc-300 bg-accent-100/50 dark:bg-accent-950/50",
-			type == "tip"
+			type == "tip",
 		)
 		.build();
 

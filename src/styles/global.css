@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/eb-garamond";
 @import "@fontsource-variable/inter";
-@import "@fontsource/reenie-beanie";
 @plugin '@tailwindcss/typography';
 
 @source "../components/";
@@ -11,7 +10,6 @@
 @theme {
 	--font-garamond: "EB Garamond Variable", serif;
 	--font-inter: "Inter Variable", sans-serif;
-	--font-beanie: "Reenie Beanie", cursive;
 
 	--color-accent-50: var(--color-emerald-50);
 	--color-accent-100: var(--color-emerald-100);

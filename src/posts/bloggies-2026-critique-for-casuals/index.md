@@ -24,21 +24,21 @@ You can find the post about advice [here](/posts/bloggies-2026-advice-for-casual
 
 This category includes critical analysis of books, games, and more. Here are the four posts with the most intriguing or focused criticism. For anyone who enjoys analyzing RPGs in great depth, read _The Isle_ and then read [failforward's review](https://www.failforward.moe/2025/10/the-isle-review-mostly.html) and [Sorensen's musing thoughts](https://samsorensen.blot.im/what-does-a-work-not-need) on the module.
 
-## [Playing the Chaplain's Game](https://www.skeletoncodemachine.com/p/chaplains-game)
+### [Playing the Chaplain's Game](https://www.skeletoncodemachine.com/p/chaplains-game)
 
 A straight forward review and explanation of the game that is enhanced by the reader trying out the solo game themselves halfway through and then returning to finish the piece. Without spoiling too much, this is the first RPG review I read where I truly thought a writer was explaining a mechanic incorrectly. Apparently I've done too many coin-flipping programmer brain teasers.
 
-## [The Isle: The Review (Mostly) - The Glamour Pt.3](https://www.failforward.moe/2025/10/the-isle-review-mostly.html)
+### [The Isle: The Review (Mostly) - The Glamour Pt.3](https://www.failforward.moe/2025/10/the-isle-review-mostly.html)
 
 The best OSR review of the bunch. I would be lying if I said I had definitive thoughts on _The Isle_. I think the book's spartan graphic design and the text's insistence it must be read and not referenced, spotlight it in a crowd of OSR adventures. For all its sins, _The Isle_ features beautiful writing and surprise while avoiding the nigh unreadable justified columns and eighty bolded words per A5 page that other OSR adventures employ.
 
 For those interested in going the extra mile in analysis, consider reading Sam Sorensen's take on _The Isle_ in [What Does a Work Not Need?](https://samsorensen.blot.im/what-does-a-work-not-need).
 
-## [Review of Initiative Methods ](https://knightattheopera.blogspot.com/2025/06/review-of-initiative-methods.html)
+### [Review of Initiative Methods ](https://knightattheopera.blogspot.com/2025/06/review-of-initiative-methods.html)
 
 The most comprehensive review of initiative methods I've seen. If you've never written an initiative method into a game though, it's a pass.
 
-## [The D&D 4th edition renaissance: A look into the history of the edition, its flaws and its merits](https://therpggazette.wordpress.com/2025/01/22/the-dd-4th-edition-rennaissaince-a-look-into-the-history-of-the-edition-its-flaws-and-its-merits/)
+### [The D&D 4th edition renaissance: A look into the history of the edition, its flaws and its merits](https://therpggazette.wordpress.com/2025/01/22/the-dd-4th-edition-rennaissaince-a-look-into-the-history-of-the-edition-its-flaws-and-its-merits/)
 
 I'm only including this one for the other freaks who played multi-year long D&D 4th edition campaigns.
 

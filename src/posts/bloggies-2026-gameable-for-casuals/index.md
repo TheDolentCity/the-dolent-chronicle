@@ -27,19 +27,19 @@ I love RPG blogs, but my friends don't. They're not going to read the 80+ blog p
 
 This category includes ready-to-use rules, monsters, and more. This was my favorite Bloggies category to read so far. Many of these posts triggered a new game design idea for me, or had practical game content that gave me a few minutes of imagined play to enjoy. The four below posts were the most practical to recommend for me though. They either provide useful game mechanics for your table, or highlight the process of creating RPGs in a way that other designers can learn from.
 
-### [A mental inventory for occult horror campaigns: an HPless system](https://cowfrog.bearblog.dev/a-mental-inventory-for-occult-horror-campaigns-an-hpless-system/?ref=explorersdesign.com)
+### [A mental inventory for occult horror campaigns: an HPless system](https://cowfrog.bearblog.dev/a-mental-inventory-for-occult-horror-campaigns-an-hpless-system/)
 
 As someone who has designed several horror systems and was disappointed in all of them, I feel qualified to say that this is the start of a great system. The character's psyche is not only represented, but also forces the player to put emphasis on elements of their life that they may not otherwise acknowledge. How many horror games have a character note down the mental burden of student loans?
 
-### [Stacking The Deck – Mining Fallout: New Vegas for TTRPG Setting Ideas](https://dicegoblin.blog/stacking-the-deck-mining-fallout-new-vegas-for-ttrpg-setting-ideas/?ref=explorersdesign.com)
+### [Stacking The Deck – Mining Fallout: New Vegas for TTRPG Setting Ideas](https://dicegoblin.blog/stacking-the-deck-mining-fallout-new-vegas-for-ttrpg-setting-ideas/)
 
 When I talked about ["Hacking Media"](/posts/play-worlds-manifesto#hacking-media) this is what I'm talking about! Using a well-written video game narrative and adapting it into your own TTRPG setting. With Dice Goblin's analysis of New Vegas's structure, motivations, and resources, the reader is left with an easy to follow guide for writing their own faction-forward RPG adventure.
 
-### [Promises - a Mythic Bastionland House Rule](https://www.valerialoves.com/promises-a-mythic-bastionland-house-rule/?ref=explorersdesign.com)
+### [Promises - a Mythic Bastionland House Rule](https://www.valerialoves.com/promises-a-mythic-bastionland-house-rule/)
 
 I'm a big fan of diagetic, tag-based systems. So I was thrilled to read a short post that outlined a minimalist tag-based approach for breaking and keeping oaths in McDowell's romantic Bastionland.
 
-### [Let's Make a Forest](https://newschoolrevolution.com/lets-make-a-forest/?ref=explorersdesign.com)
+### [Let's Make a Forest](https://newschoolrevolution.com/lets-make-a-forest/)
 
 A long and in-depth look at Yochai Gal writing an adventure for Cairn 2E. Unsurprisingly, he uses the many generators written into Cairn 2E to define his forest, points of interest, and encounter tables. If you've never written an adventure before, I think this post is a great way to see what the process can be like, **and how easy it is for you to do it yourself.**
 

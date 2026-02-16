@@ -12,9 +12,14 @@ tags: [RPG, Bloggies, blog, advice]
 
 > The Bloggies are back. A yearly celebration of blogging in tabletop roleplaying games. It's one-part award show and one-part battle royale. It's silly. It's intense. It's an opportunity to read great posts from across the blogosphere.
 
-## What is this about then?
+## What is this series?
 
 I love RPG blogs, but my friends don't. They're not going to read the 80+ blog posts that make up the entire Bloggies competition. But maybe they'll read the _best ones_ if I give some solid recommendations. If you're someone who already plans to read all (or most) of the Bloggies, this isn't for you. This short series will offer a few recommendations for the five Bloggie categories this year: advice, critique, gameable, theory, and meta.
+
+### Other posts in series
+
+1. [Critique for Casuals](/posts/bloggies-2026-critique-for-casuals)
+1. [Gameable for Casuals](/posts/bloggies-2026-gameable-for-casuals)
 
 ---
 

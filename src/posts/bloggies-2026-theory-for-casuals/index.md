@@ -36,7 +36,7 @@ Skeleton Code Machine rarely misses. Another banger post that analyzes tabletop 
 
 A love letter to maybe the most maligned modern fantasy archetype. Powerful enough to turn my hoary, brackish heart to a muted vermilion. Required reading for Orc lovers everywhere.
 
-### [https://magnoliakeep.blogspot.com/2025/08/combat-as-my-balls.html?ref=explorersdesign.com](https://magnoliakeep.blogspot.com/2025/08/combat-as-my-balls.html)
+### [Combat as My Balls](https://magnoliakeep.blogspot.com/2025/08/combat-as-my-balls.html)
 
 This year was certainly one for punchy titles. You might've heard the phrase "combat as sport" if you've been in an OSR space for long enough. This post covers the simplified taxonomy of combat as sport vs war, but goes on to emphasize other "combat as [noun]" possibilities. A more straightforward title would be, what are the reasons a game has "combat"?
 

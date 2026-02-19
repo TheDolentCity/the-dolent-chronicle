@@ -16,10 +16,11 @@ tags: [RPG, Bloggies, blog, gameable]
 
 I love RPG blogs, but my friends don't. They're not going to read the 80+ blog posts that make up the entire Bloggies competition. But maybe they'll read the _best ones_ if I give some solid recommendations. If you're someone who already plans to read all (or most) of the Bloggies, this isn't for you. This short series will proposes the best posts from each of the five Bloggie categories this year: advice, critique, gameable, theory, and meta.
 
-### Other posts in series
+### Other posts in this series
 
 1. [Advice for Casuals](/posts/bloggies-2026-advice-for-casuals)
 1. [Critique for Casuals](/posts/bloggies-2026-critique-for-casuals)
+1. [Theory for Casuals](/posts/bloggies-2026-theory-for-casuals)
 
 ---
 

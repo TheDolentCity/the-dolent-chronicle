@@ -4,8 +4,9 @@ import { PageDescription } from "@/components/app/PageDescription";
 import Prose from "@/components/markdown/Prose.astro";
 import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
 import { Image } from "astro:assets";
-import { MoveLeft } from "lucide-react";
 import BaseLayout from "./BaseLayout.astro";
+import { PageHeader } from "@/components/app/PageHeader";
+import { PageHomeButton } from "@/components/app/PageHomeButton";
 
 interface Props {
 	frontmatter: {
@@ -23,24 +24,15 @@ const { frontmatter } = Astro.props;
 <BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image?.src}>
 	<article class="max-w-[70rem] mx-auto pt-16 md:pt-32 pb-16">
 		<Prose class="mx-auto">
-			<div class="mb-4">
-				<div class="flex gap-2 justify-between items-end">
-					<PageTitle>
-						{frontmatter.title}
-						<a
-							data-astro-prefetch
-							href="/"
-							title="Go home"
-							class="absolute -left-10 lg:-left-14 top-1 lg:top-2 p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-400/25 hover:dark:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 mst"
-						>
-							<MoveLeft className="size-4 lg:size-6" />
-						</a>
-					</PageTitle>
-				</div>
-				<PageDescription>
-					{frontmatter.description}
-				</PageDescription>
-			</div>
+			<PageHeader>
+				<PageHomeButton />
+				<PageTitle>
+					{frontmatter.title}
+				</PageTitle>
+			</PageHeader>
+			<PageDescription>
+				{frontmatter.description}
+			</PageDescription>
 			<hr />
 		</Prose>
 		{

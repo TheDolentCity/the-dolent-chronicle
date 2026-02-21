@@ -35,6 +35,15 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 				{description}
 			</PageDescription>
 			<div class="flex not-prose gap-1 lg:gap-2 mt-2 mb-4 items-center justify-start text-xs text-zinc-600 dark:text-zinc-400">
+				<a
+					data-astro-prefetch
+					href="/newsletter"
+					title="Go to newsletter"
+					class="px-2 py-1 rounded font-medium text-zinc-100 bg-zinc-950 dark:text-zinc-950 dark:bg-zinc-100"
+				>
+					Newsletter
+				</a>
+				<span class="">•</span>
 				<FormattedDate date={published} />
 				<span class="">•</span>
 				<div class="truncate">{Math.round(minutes)} minutes to read</div>

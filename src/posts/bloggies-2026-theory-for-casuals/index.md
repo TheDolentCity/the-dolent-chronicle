@@ -21,6 +21,7 @@ I love RPG blogs, but my friends don't. They're not going to read the 80+ blog p
 1. [Advice for Casuals](/posts/bloggies-2026-advice-for-casuals)
 1. [Critique for Casuals](/posts/bloggies-2026-critique-for-casuals)
 1. [Gameable for Casuals](/posts/bloggies-2026-gameable-for-casuals)
+1. [Meta for Casuals](/posts/bloggies-2026-meta-for-casuals)
 
 ---
 

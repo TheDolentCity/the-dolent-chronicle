@@ -1,0 +1,13 @@
+---
+import clsx from 'clsx';
+
+interface Props {
+  className?: string | undefined;
+}
+
+const { className = undefined } = Astro.props;
+---
+
+<nav class={clsx("not-prose flex gap-2 mt-4 px-2 items-center justify-between", className)}>
+  <slot />
+</nav>

@@ -1,15 +1,20 @@
 ---
 import { PageDescription } from "@/components/app/PageDescription";
 import { PageHeader } from "@/components/app/PageHeader";
+import PageHeaderLink from "@/components/app/PageHeaderLink.astro";
+import PageNav from "@/components/app/PageNav.astro";
+import PageNavSubsection from "@/components/app/PageNavSubsection.astro";
 import { PageNewsletterButton } from "@/components/app/PageNewsletterButton";
 import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
 import { PostList, PostListLoadMoreButton } from "@/components/posts/Posts";
+import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
 import { TagList } from "@/components/tags/Tags";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { mapAndCountTags } from "@/utilities/post-utilities";
 import { getCollection } from "astro:content";
+import { Rss } from "lucide-react";
 
 // Get sorted posts
 const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
@@ -32,17 +37,27 @@ const mostTags = tags.splice(0, 100);
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<PageSection>
 		<PageHeader>
-			<PageNewsletterButton />
 			<PageTitle>
 				{SITE_TITLE}
 			</PageTitle>
 		</PageHeader>
-		<PageDescription>
-			{SITE_DESCRIPTION}
-		</PageDescription>
+    <PageNav>
+      <PageNavSubsection>
+        <PageHeaderLink href="/posts" title="See posts archive">Archive</PageHeaderLink>
+        <PageHeaderLink href="/about" title="About the Dolent Chronicle">About</PageHeaderLink>
+        <PageHeaderLink href="/newsletter" title="Sign up to newsletter">Newsletter</PageHeaderLink>
+      </PageNavSubsection>
+      <PageNavSubsection className="grayscale-100">
+        <PageHeaderLink href="/rss.xml" title="RSS file">
+          <Rss width="18" height="18" />
+        </PageHeaderLink>
+        <PageHeaderLink href="https://bsky.app/profile/thedolentcity.bsky.social" title="Go to my Bluesky account">
+          <BlueskyLogo width="18" height="18" />
+        </PageHeaderLink>
+      </PageNavSubsection>
+    </PageNav>
 		<hr />
 		<PostList posts={recentPosts} />
-		<PostListLoadMoreButton />
 		<TagList tags={mostTags} />
 	</PageSection>
 </BaseLayout>

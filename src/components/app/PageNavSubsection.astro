@@ -1,0 +1,13 @@
+---
+import clsx from 'clsx';
+
+interface Props {
+  className?: string | undefined;
+}
+
+const { className = undefined } = Astro.props;
+---
+
+<div class={clsx("flex gap-3 lg:gap-4 items-center", className)}>
+  <slot />
+</div>

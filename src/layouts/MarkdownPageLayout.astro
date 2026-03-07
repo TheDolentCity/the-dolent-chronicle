@@ -34,7 +34,6 @@ const { frontmatter } = Astro.props;
 				{frontmatter.description}
 			</PageDescription>
 			<hr />
-		</Prose>
 		{
 			frontmatter.image && (
 				<figure class="mt-9 mb-9">
@@ -43,7 +42,6 @@ const { frontmatter } = Astro.props;
 				</figure>
 			)
 		}
-		<Prose class="mx-auto">
 			<slot />
 			<hr />
 			<a

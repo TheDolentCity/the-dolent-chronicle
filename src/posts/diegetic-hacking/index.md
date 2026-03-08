@@ -67,7 +67,18 @@ TODO
 
 ### `PRB-SYS`
 
-Probes the system with a non-invasive query. This returns basic information concerning the system and user's current status, such as whether the system requires authentication or whether the system is online.
+Probes the system with a non-invasive query. This returns basic information concerning the system and user's current status, such as whether the system requires authentication or whether the system is online. If the user is authenticated, it returns the following response:
+
+```bash wrap
+USER|AUTHENTICATION: `False`, `True`
+USER|AUTHORIZATION: A permissions list like ``
+SYSTEM|POWER `Off` | `On`
+SYSTEM|NETWORK `Offline` | `Online`
+SYSTEM|SECURITY `Offline` | `Online`
+SYSTEM|FIREWALL `Offline` | `Online`
+SYSTEM|DRIVES|LOCAL `0-6`
+SYSTEM|DRIVES|NETWORK `0-6`
+```
 
 #### Request Response
 

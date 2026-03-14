@@ -16,10 +16,14 @@ export default defineConfig({
 	integrations: [mdx(), react()],
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
+		shikiConfig: {
+			theme: "github-dark-high-contrast",
+		},
 	},
 	prefetch: true,
 	redirects: {
-		"/posts/review-runecairn-bestiary" : "/posts/play-critica-runecairn-bestiary"
+		"/posts/review-runecairn-bestiary":
+			"/posts/play-critica-runecairn-bestiary",
 	},
 	vite: {
 		plugins: [mdx(), sitemap(), tailwindcss()],

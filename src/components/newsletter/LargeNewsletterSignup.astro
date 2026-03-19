@@ -1,16 +1,14 @@
 ---
 import { actions } from "astro:actions";
 import { Check } from "lucide-react";
+import data from "src/data/resend-topics.json";
 
 // Retrieve the result of the signup action for UI display
 const signup = Astro.getActionResult(actions.newsletter.signup);
 
-// If the signup result exists, no need to fetch topics
-const topics = signup?.data && !signup?.error ? null : await Astro.callAction(actions.newsletter.getTopics, {});
-
 const showSignupResponse = signup?.data && !signup?.error;
-const showTopicsErrorResponse = topics?.error && !signup?.data;
-const showSignupForm = !showSignupResponse && topics?.data && !topics?.error;
+const showTopicsErrorResponse = !data?.topics || data.topics.length == 0;
+const showSignupForm = !showSignupResponse && data?.topics && data.topics.length > 0;
 const showSignupErrorResponse = signup?.error;
 const signupError =
 	signup?.error && signup.error.code == "BAD_REQUEST"
@@ -49,7 +47,7 @@ const signupError =
 			</label>
 			<fieldset class="mt-4">
 				<legend class="text-sm all-small-caps font-semibold">Subscription topics</legend>
-				{topics?.data?.map((topic) => (
+				{data?.topics?.map((topic) => (
 					<label class="relative flex gap-1.5 mt-2 items-center">
 						<input
 							type="checkbox"

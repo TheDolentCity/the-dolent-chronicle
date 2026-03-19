@@ -1,0 +1,20 @@
+{
+	"topics": [
+    {
+      "id": "0e9012ce-9cc9-4f55-927f-f0128ce11353",
+      "name": "Blog Posts",
+      "created_at": "2026-02-01 20:29:30.255901+00",
+      "visibility": "public",
+      "description": "",
+      "default_subscription": "opt_out"
+    },
+    {
+      "id": "1a2e69db-cc7d-4d8a-abeb-08be2efc0388",
+      "name": "Product Launches",
+      "created_at": "2026-02-01 20:28:56.87847+00",
+      "visibility": "public",
+      "description": "",
+      "default_subscription": "opt_out"
+    }
+  ]
+}

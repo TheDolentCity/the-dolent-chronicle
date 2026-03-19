@@ -1,6 +1,11 @@
 ---
-import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
+import { Image } from "astro:assets";
 import { ThemeSelect } from "@/components/themes/ThemeSelect";
+import Rootring from "../rootring/Rootring.astro";
+import RootringLinks from "../rootring/RootringLinks.astro";
+import RootringWordmark from "../rootring/RootringWordmark.astro";
+import RootringLink from "../rootring/RootringLink.astro";
+import Brick from "@/assets/images/the-dolent-chronicle-brick.jpg";
 
 const today = new Date();
 ---
@@ -8,33 +13,21 @@ const today = new Date();
 <footer class="border-t border-zinc-400 dark:border-zinc-800 bg-zinc-200 dark:bg-black">
 	<div class="max-w-[70rem] mx-auto py-8 px-8">
 		<div class="flex flex-wrap gap-2 lg:gap-4 items-center justify-between">
-			<nav class="flex flex-wrap gap-3 lg:gap-4 items-center">
-				<a data-astro-prefetch href="/" title="Go home" class="text-xs sm:text-sm md:text-base leading-none hover:text-zinc-900 dark:hover:text-zinc-100 mst">Home</a>
-				<a data-astro-prefetch href="/about" title="About this site" class="text-xs sm:text-sm md:text-base leading-none hover:text-zinc-900 dark:hover:text-zinc-100 mst"
-					>About</a
-				>
-				<a
-					data-astro-prefetch
-					href="/newsletter"
-					title="Sign up to newsletter"
-					class="text-xs sm:text-sm md:text-base leading-none hover:text-zinc-900 dark:hover:text-zinc-100 mst">Newsletter</a
-				>
-				<a data-astro-prefetch href="/rss.xml" title="RSS file" class="text-xs sm:text-sm md:text-base leading-none hover:text-zinc-900 dark:hover:text-zinc-100 mst"
-					>RSS</a
-				>
-				<a
-					href="https://bsky.app/profile/thedolentcity.bsky.social"
-					title="Go to my Bluesky account"
-					class="flex gap-1 items-center text-xs sm:text-sm md:text-base leading-none hover:text-zinc-900 dark:hover:text-zinc-100 mst"
-				>
-					<BlueskyLogo width="18" height="18" />
-					Bluesky
-				</a>
-			</nav>
+			<Rootring>
+				<RootringWordmark />
+				<span>|</span>
+				<RootringLinks>
+					<RootringLink href="https://rootr.ing/prev?site=https://thedolentchronicle.com">Prev</RootringLink>
+					<RootringLink href="https://rootr.ing/random">Random</RootringLink>
+					<RootringLink href="https://rootr.ing/directory">Directory</RootringLink>
+					<RootringLink href="https://rootr.ing/next?site=https://thedolentchronicle.com">Next</RootringLink>
+				</RootringLinks>
+			</Rootring>
 			<div class="flex gap-2 lg:gap-4 items-center">
+				<Image src={Brick} alt="The Dolent Chronicle's web brick" title="The Dolent Chronicle's web brick" class="" />
 				<ThemeSelect client:only="react" />
 			</div>
 		</div>
-		<div class="pt-2 text-xs sm:text-sm">&copy; {today.getFullYear()} The Dolent Chronicle. All rights reserved.</div>
+		<div class="pt-2 text-xs sm:text-sm truncate">&copy; {today.getFullYear()} The Dolent Chronicle. All rights reserved.</div>
 	</div>
 </footer>

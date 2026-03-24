@@ -8,6 +8,6 @@ interface Props {
 const { className = undefined } = Astro.props;
 ---
 
-<div class={clsx("flex gap-3 lg:gap-4 items-center", className)}>
+<div class={clsx("flex flex-wrap gap-3 lg:gap-4 items-center", className)}>
   <slot />
 </div>

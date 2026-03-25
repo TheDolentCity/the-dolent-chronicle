@@ -31,7 +31,7 @@ const allTags = [
 const tags = mapAndCountTags(allTags);
 
 const recentPosts = posts.splice(0, 10);
-const mostTags = tags.splice(0, 20);
+const mostTags = tags.splice(0, 30);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -41,22 +41,22 @@ const mostTags = tags.splice(0, 20);
 				{SITE_TITLE}
 			</PageTitle>
 		</PageHeader>
-    <PageNav>
-      <PageNavSubsection>
-        <PageNavLink href="/posts" title="See posts archive">Archive</PageNavLink>
-        <PageNavLink href="/tags" title="See all post tags">Tags</PageNavLink>
-        <PageNavLink href="/about" title="About the Dolent Chronicle">About</PageNavLink>
-        <PageNavLink href="/newsletter" title="Sign up to newsletter">Newsletter</PageNavLink>
-      </PageNavSubsection>
-      <PageNavSubsection className="grayscale-100">
-        <PageNavLink href="/rss.xml" title="RSS file">
-          <Rss width="18" height="18" />
-        </PageNavLink>
-        <PageNavLink href="https://bsky.app/profile/thedolentcity.bsky.social" title="Go to my Bluesky account">
-          <BlueskyLogo width="18" height="18" />
-        </PageNavLink>
-      </PageNavSubsection>
-    </PageNav>
+		<PageNav>
+			<PageNavSubsection>
+				<PageNavLink href="/posts" title="See posts archive">Archive</PageNavLink>
+				<PageNavLink href="/tags" title="See all post tags">Tags</PageNavLink>
+				<PageNavLink href="/about" title="About the Dolent Chronicle">About</PageNavLink>
+				<PageNavLink href="/newsletter" title="Sign up to newsletter">Newsletter</PageNavLink>
+			</PageNavSubsection>
+			<PageNavSubsection className="grayscale-100">
+				<PageNavLink href="/rss.xml" title="RSS file">
+					<Rss width="18" height="18" />
+				</PageNavLink>
+				<PageNavLink href="https://bsky.app/profile/thedolentcity.bsky.social" title="Go to my Bluesky account">
+					<BlueskyLogo width="18" height="18" />
+				</PageNavLink>
+			</PageNavSubsection>
+		</PageNav>
 		<hr />
 		<PostList posts={recentPosts} />
 		<TagList tags={mostTags} />

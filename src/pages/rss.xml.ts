@@ -1,9 +1,9 @@
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
-import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 import { getContainerRenderer as getReactContainerRenderer } from "@astrojs/react";
 import rss, { type RSSFeedItem } from "@astrojs/rss";
 import type { APIContext } from "astro";
+import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { loadRenderers } from "astro:container";
 import { getCollection, render } from "astro:content";
 import { transform, walk } from "ultrahtml";

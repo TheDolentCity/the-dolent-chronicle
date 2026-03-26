@@ -1,12 +1,12 @@
 ---
-import { FormattedDate } from "@/components/time/FormattedDate";
-import { PageTitle } from "@/components/app/PageTitle";
 import { PageDescription } from "@/components/app/PageDescription";
+import { PageHeader } from "@/components/app/PageHeader";
 import { PageHomeButton } from "@/components/app/PageHomeButton";
-import BaseLayout from "./BaseLayout.astro";
+import { PageTitle } from "@/components/app/PageTitle";
 import Figure from "@/components/markdown/Figure.astro";
 import Prose from "@/components/markdown/Prose.astro";
-import { PageHeader } from "@/components/app/PageHeader";
+import { FormattedDate } from "@/components/time/FormattedDate";
+import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
 	title: string;
@@ -23,7 +23,7 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 ---
 
 <BaseLayout title={title} description={description} image={image?.src}>
-	<article class="max-w-[70rem] mx-auto pt-16 md:pt-32 pb-16">
+	<article class="max-w-280 mx-auto pt-16 md:pt-32 pb-16">
 		<Prose class="mx-auto">
 			<PageHeader>
 				<PageHomeButton />
@@ -54,7 +54,7 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 		<Prose class="">
 			<slot />
 			<hr />
-			<p class="!mt-12 italic text-sm">
+			<p class="mt-12! italic text-sm">
 				<strong class="font-garamond font-normal text-sm lg:text-base">The Dolent Chronicle</strong>
 				is an RPG blog produced by Dante Nardo. If you liked this post, please consider sharing it on whatever doomed planes you reside.
 			</p>

@@ -1,7 +1,7 @@
 ---
 title: "Session Report — Fragmented"
 description: A session report for a game of Dread with amnesiac characters.
-published: Mar 24 2026
+published: Mar 25 2026
 image: ./session-report-fragmented.webp
 imageAlt: A distorted, halftone image of a komodo dragon on a black background.
 caption: An edited version of a stock photo from Ingrid Dietrich.
@@ -36,6 +36,6 @@ The weakest aspect of the session was the terrain and lack of choice. It was an 
 
 The strongest aspect of the session was the horror or joy of receiving a memory from the GM. Instead of finding loot, we discovered more of ourselves. Some of the characters were quite silly, leading to the group laughing at a member's incredibly befuddled expressions as they read their memory. Others had more dramatic reveals, changing our perspective on the current situation. The memory of my brother (sort of like a ghost) had been with our party for about an hour when he suddenly didn't want to proceed forward. I received a memory that in context led me to assume he had betrayed me in the past, so I tricked him and struck him in the head with my mace, destroying his memory. I then unlocked my final memory, wherein _I betrayed him_. It was a perfect setup and reveal, leaving Sir Lars lonely and devastated.
 
-## END
+## End
 
 While the on-the-rails experience led to a few slow moments, it was still a great few hours with friends. I think it would be quite difficult to run a game with amnesiacs and have a more freeform game, but if anyone has done so, I would love to hear about it.

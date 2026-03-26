@@ -13,7 +13,7 @@ export default defineConfig({
 	adapter: vercel({
 		imageService: true,
 	}),
-	integrations: [mdx(), react()],
+	integrations: [sitemap(), mdx(), react()],
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		shikiConfig: {

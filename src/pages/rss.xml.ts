@@ -15,23 +15,23 @@ export async function GET(context: APIContext) {
 	let site = context.site?.href || "https://thedolentchronicle.com";
 	site = site.at(-1) === "/" ? site.slice(0, -1) : site;
 
-	// // Load renderers for UI frameworks (e.g. MDX, React, Vue, etc.)
+	// Load renderers for UI frameworks (e.g. MDX, React, Vue, etc.)
 	const renderers = await loadRenderers([
 		getMDXRenderer(),
 		getReactContainerRenderer(),
 	]);
 
-	// // Create a new Astro container that we can render components with.
-	// // See https://docs.astro.build/en/reference/container-reference/
+	// Create a new Astro container that we can render components with.
+	// See https://docs.astro.build/en/reference/container-reference/
 	const container = await AstroContainer.create({ renderers });
 
-	// // Load the content collection for the RSS feed.
-	// // Sort by publication date descending.
+	// Load the content collection for the RSS feed.
+	// Sort by publication date descending.
 	const posts = (await getCollection("posts")).sort((a, b) =>
 		a.data.published > b.data.published ? -1 : 1,
 	);
 
-	// // Loop over blog posts to create feed items for each, including full content
+	// Loop over blog posts to create feed items for each, including full content
 	const items: RSSFeedItem[] = [];
 	for (const post of posts) {
 		// Get the `<Content/>` for the current post and render it to a string

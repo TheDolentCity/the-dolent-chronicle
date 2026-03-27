@@ -1,7 +1,7 @@
 ---
 title: "Session Report — Fragmented"
 description: A session report for a game of Dread with amnesiac characters.
-published: Mar 25 2026
+published: Mar 26 2026
 image: ./session-report-fragmented.webp
 imageAlt: A distorted, halftone image of a komodo dragon on a black background.
 caption: An edited version of a stock photo from Ingrid Dietrich.

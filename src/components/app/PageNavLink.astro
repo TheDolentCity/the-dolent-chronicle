@@ -10,6 +10,6 @@ interface Props {
 const { href, title, className = undefined } = Astro.props;
 ---
 
-<a data-astro-prefetch href={href} title={title} class={clsx("text-sm md:text-base lg:text-lg truncate leading-none hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 mst", className)}>
+<a data-astro-prefetch href={href} title={title} class={clsx("text-sm md:text-base lg:text-lg truncate hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 mst", className)}>
   <slot />
 </a>

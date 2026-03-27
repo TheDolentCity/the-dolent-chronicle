@@ -1,5 +1,4 @@
 ---
-import { PageDescription } from "@/components/app/PageDescription";
 import { PageHeader } from "@/components/app/PageHeader";
 import PageNavLink from "@/components/app/PageNavLink.astro";
 import { PageHomeButton } from "@/components/app/PageHomeButton";
@@ -9,13 +8,26 @@ import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
 import { PostList } from "@/components/posts/Posts";
 import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
+import { TagList } from "@/components/tags/Tags";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { mapAndCountTags } from "@/utilities/post-utilities";
 import { getCollection } from "astro:content";
 import { Rss } from "lucide-react";
 
 // Get sorted posts
 const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+
+// Get all tags from posts
+const allTags = [
+	...posts
+		.map((post) => post.data.tags)
+		.flat()
+		.sort(),
+];
+
+// Count the instance of each tag
+const tags = mapAndCountTags(allTags);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -43,6 +55,7 @@ const posts = (await getCollection("posts")).sort((a, b) => b.data.published.val
       </PageNavSubsection>
     </PageNav>
 		<hr />
-		<PostList posts={posts} />
+    <p>Select a tag below to see all related posts:</p>
+		<TagList tags={tags} />
 	</PageSection>
 </BaseLayout>

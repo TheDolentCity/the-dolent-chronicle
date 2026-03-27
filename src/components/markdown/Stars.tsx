@@ -7,7 +7,7 @@ export function Stars({ stars }: { stars: (typeof StarCount)[number] }) {
 		throw new Error(
 			"Invalid `type` prop passed to the `<Aside>` component.\n" +
 				`Received: ${JSON.stringify(stars)}\n` +
-				`Expected one of ${StarCount.map((i) => JSON.stringify(i)).join(", ")}`
+				`Expected one of ${StarCount.map((i) => JSON.stringify(i)).join(", ")}`,
 		);
 	}
 
@@ -17,10 +17,16 @@ export function Stars({ stars }: { stars: (typeof StarCount)[number] }) {
 	return (
 		<div className="not-prose flex gap-1 -mt-4">
 			{positive.map((e, i) => (
-				<Star className="text-amber-600 fill-amber-600 dark:text-amber-400 dark:fill-amber-400" />
+				<Star
+					key={i}
+					className="text-amber-600 fill-amber-600 dark:text-amber-400 dark:fill-amber-400"
+				/>
 			))}
 			{negative.map((e, i) => (
-				<Star className="opacity-50 text-amber-600 dark:text-amber-400" />
+				<Star
+					key={i}
+					className="opacity-50 text-amber-600 dark:text-amber-400"
+				/>
 			))}
 		</div>
 	);

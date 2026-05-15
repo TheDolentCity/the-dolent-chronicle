@@ -8,9 +8,9 @@ imageAlt: A colorful image of a rock protruding from a lake with a burned orange
 tags: [folklore, dark-fantasy, writing, zine]
 ---
 
-## Why did you make this?
+## What is this and why did you make it?
 
-Boredom mostly. I liked the idea of creating some moody art to go along with the text of these little fairytales. If the art above piques your interest, then check out the game on itch.io with the widget below.
+Its a little zine with moody art and three short stories. I liked the idea of presenting the stories with an almost 70s era dark animated fantasy vibe. If the art above piques your interest, then check out the zine on itch.io with the widget below.
 
 <iframe frameborder="0" src="https://itch.io/embed/4579897?bg_color=2B0000&amp;fg_color=ff6e07&amp;link_color=FFF21D&amp;border_color=ff6e07" width="552" height="167"><a href="https://the-dolent-city.itch.io/three-daimons-of-the-gloaming-realm">Three Daimons of the Gloaming Realm by The Dolent City</a></iframe>
 

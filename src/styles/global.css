@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "@fontsource-variable/eb-garamond";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/overpass-mono";
+/* @import "@fontsource-variable/overpass-mono/400.css";
+@import "@fontsource-variable/overpass-mono/700.css"; */
 @plugin '@tailwindcss/typography';
 
 @source "../components/";
@@ -10,6 +13,7 @@
 @theme {
 	--font-garamond: "EB Garamond Variable", serif;
 	--font-inter: "Inter Variable", sans-serif;
+	--font-mono: "Overpass Mono Variable", monospace;
 
 	--color-accent-50: var(--color-emerald-50);
 	--color-accent-100: var(--color-emerald-100);

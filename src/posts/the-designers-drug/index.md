@@ -5,7 +5,17 @@ published: Aug 10 2026
 image: ./the-designers-drug.webp
 imageAlt: "A dark, distorted, halftone image of a magnifying glass, handwritten note, and crumpled paper on a wooden table with the text 'The Designer's Drug' above it."
 caption: "Photo by KoolShooters"
-tags: [RPG, essay, game-design, star-wars, age-of-rebellion, edge-of-the-empire]
+tags:
+  [
+    RPG,
+    essay,
+    game-design,
+    star-wars,
+    age-of-rebellion,
+    edge-of-the-empire,
+    dread,
+    journeyman,
+  ]
 ---
 
 First off, I'm a loser game designer who went to college for game design. That means I have very expensive opinions and I am more at fault for the behavior I'm about to describe than others, so don't yell at me.

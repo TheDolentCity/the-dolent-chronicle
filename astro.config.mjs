@@ -17,7 +17,7 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		shikiConfig: {
-			theme: "github-dark-high-contrast",
+			theme: "vitesse-dark",
 		},
 	},
 	prefetch: true,

@@ -51,7 +51,7 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 			<hr />
 		</Prose>
 		{image && <Figure src={image?.src} alt={imageAlt ?? ""} caption={caption} />}
-		<Prose class="">
+		<Prose class="mt-9">
 			<slot />
 			<hr />
 			<p class="mt-12! italic text-sm">

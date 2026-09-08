@@ -1,13 +1,11 @@
 ---
-import { PageDescription } from "@/components/app/PageDescription";
 import { PageHeader } from "@/components/app/PageHeader";
 import PageNavLink from "@/components/app/PageNavLink.astro";
 import PageNav from "@/components/app/PageNav.astro";
 import PageNavSubsection from "@/components/app/PageNavSubsection.astro";
-import { PageNewsletterButton } from "@/components/app/PageNewsletterButton";
 import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
-import { PostList, PostListLoadMoreButton } from "@/components/posts/Posts";
+import { PostList } from "@/components/posts/Posts";
 import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
 import { TagList } from "@/components/tags/Tags";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
@@ -47,6 +45,7 @@ const mostTags = tags.splice(0, 30);
 				<PageNavLink href="/tags" title="See all post tags">Tags</PageNavLink>
 				<PageNavLink href="/about" title="About the Dolent Chronicle">About</PageNavLink>
 				<PageNavLink href="/newsletter" title="Sign up to newsletter">Newsletter</PageNavLink>
+				<PageNavLink href="/manuscripts" title="See all post tags">Manuscripts</PageNavLink>
 			</PageNavSubsection>
 			<PageNavSubsection className="grayscale-100">
 				<PageNavLink href="/rss.xml" title="RSS file">

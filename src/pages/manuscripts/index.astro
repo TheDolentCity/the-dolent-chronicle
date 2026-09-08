@@ -6,15 +6,15 @@ import PageNav from "@/components/app/PageNav.astro";
 import PageNavSubsection from "@/components/app/PageNavSubsection.astro";
 import PageSection from "@/components/app/PageSection.astro";
 import { PageTitle } from "@/components/app/PageTitle";
-import { PostList } from "@/components/posts/Posts";
+import { ManuscriptList } from "@/components/manuscripts/Manuscripts";
 import BlueskyLogo from "@/components/social/BlueskyLogo.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { Rss } from "lucide-react";
 
-// Get sorted posts
-const posts = (await getCollection("posts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+// Get sorted manuscripts
+const manuscripts = (await getCollection("manuscripts")).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -43,6 +43,6 @@ const posts = (await getCollection("posts")).sort((a, b) => b.data.published.val
 			</PageNavSubsection>
 		</PageNav>
 		<hr />
-		<PostList posts={posts} />
+		<ManuscriptList {manuscripts} />
 	</PageSection>
 </BaseLayout>

@@ -10,7 +10,7 @@
 
 @theme {
 	--font-garamond: "EB Garamond Variable", serif;
-	--font-inter: "Inter Variable", sans-serif;
+	--font-inter: "Inter", sans-serif;
 	--font-mono: "Overpass Mono Variable", monospace;
 
 	--color-accent-50: var(--color-emerald-50);
@@ -60,6 +60,12 @@
 	--color-negative-800: var(--color-red-800);
 	--color-negative-900: var(--color-red-900);
 	--color-negative-950: var(--color-red-950);
+}
+
+@layer base {
+	code {
+		font-variant-ligatures: none;
+	}
 }
 
 @layer components {

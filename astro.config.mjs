@@ -6,6 +6,7 @@ import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import { remarkReadingTime } from "./plugins/remark-reading-plugin.mjs";
+import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
 	site: "https://thedolentchronicle.com",
@@ -15,6 +16,7 @@ export default defineConfig({
 	}),
 	integrations: [sitemap(), mdx(), react()],
 	markdown: {
+		processor: unified(),
 		remarkPlugins: [remarkReadingTime],
 		shikiConfig: {
 			theme: "vitesse-dark",

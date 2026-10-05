@@ -62,6 +62,12 @@
 	--color-negative-950: var(--color-red-950);
 }
 
+@layer base {
+	code {
+		font-variant-ligatures: none;
+	}
+}
+
 @layer components {
 	/* Honeypot */
 	.website {

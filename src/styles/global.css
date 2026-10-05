@@ -10,7 +10,7 @@
 
 @theme {
 	--font-garamond: "EB Garamond Variable", serif;
-	--font-inter: "Inter", sans-serif;
+	--font-inter: "Inter Variable", sans-serif;
 	--font-mono: "Overpass Mono Variable", monospace;
 
 	--color-accent-50: var(--color-emerald-50);

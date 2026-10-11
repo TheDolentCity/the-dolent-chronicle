@@ -13,9 +13,6 @@ export const GET: APIRoute = async () => {
 			},
 		);
 	}
-	return new Response(JSON.stringify({}), {
-		headers: { "Content-Type": "application/json" },
-	});
 
 	const challenge = await createChallenge({
 		algorithm: "PBKDF2/SHA-256",

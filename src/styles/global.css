@@ -60,8 +60,6 @@
 	--color-negative-800: var(--color-red-800);
 	--color-negative-900: var(--color-red-900);
 	--color-negative-950: var(--color-red-950);
-
-	--altcha-color-bg: var(--color-black);
 }
 
 @layer base {

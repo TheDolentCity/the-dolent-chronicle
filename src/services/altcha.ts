@@ -16,10 +16,10 @@ export async function VerifyAltchaPayload(payload: string) {
 		});
 	}
 
-	// Decode the payload
+	// Decode the payload for challenge/solution
 	const altcha = DecodeAltchaPayload(payload);
 
-	// Verify the solution using v2 verification signature
+	// Verify the solution
 	const result = await verifySolution({
 		challenge: altcha.challenge,
 		solution: altcha.solution,
@@ -28,7 +28,6 @@ export async function VerifyAltchaPayload(payload: string) {
 		hmacKeySignatureSecret: secret,
 	});
 
-	// v2 returns an object with a .verified boolean property
 	if (!result.verified) {
 		throw new ActionError({
 			code: "BAD_REQUEST",

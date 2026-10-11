@@ -60,6 +60,8 @@
 	--color-negative-800: var(--color-red-800);
 	--color-negative-900: var(--color-red-900);
 	--color-negative-950: var(--color-red-950);
+
+	--altcha-color-bg: var(--color-black);
 }
 
 @layer base {
@@ -105,4 +107,22 @@
 			transition-duration: 100ms;
 		}
 	}
+}
+
+/* Theme for the Altcha widget */
+[data-altcha-theme="dolent"],
+altcha-widget[theme="dolent"] {
+	--altcha-max-width: 100%;
+	--altcha-border-radius: var(--radius-md);
+	--altcha-border-width: 1px;
+	--altcha-border-color: var(--color-zinc-700);
+	--altcha-checkbox-border-width: 1.5px;
+	--altcha-color-base: var(--color-black);
+	--altcha-color-base-content: var(--color-zinc-50);
+	--altcha-input-background-color: var(--color-zinc-950);
+	--altcha-color-success: var(--color-zinc-50);
+	--altcha-color-success-content: var(--color-zinc-950);
+	--altcha-color-error: var(--color-red-600);
+	--altcha-color-error-content: var(--color-zinc-50);
+	--altcha-spinner-color: var(--color-zinc-500);
 }

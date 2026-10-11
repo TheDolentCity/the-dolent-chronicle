@@ -45,7 +45,7 @@ const signupError =
 					class="w-full p-3 text-sm rounded border border-zinc-400 text-zinc-950 bg-white dark:border-zinc-700 dark:text-zinc-50 dark:bg-black focus:outline-2 focus:dark:outline-zinc-50 mst"
 				/>
 			</label>
-			<fieldset class="mt-4">
+			<fieldset class="mt-6">
 				<legend class="text-sm all-small-caps font-semibold">Subscription topics</legend>
 				{data?.topics?.map((topic) => (
 					<label class="relative flex gap-1.5 mt-2 items-center">
@@ -63,6 +63,10 @@ const signupError =
 					</label>
 				))}
 			</fieldset>
+			<div class="mt-6">
+				<div class="mb-1 text-sm all-small-caps font-semibold">Verification</div>
+				<altcha-widget challenge="/api/altcha-challenge" auto="submit" theme="dolent" hideFooter="true" hideLogo="true" />
+			</div>
 			{showSignupErrorResponse && <p class="mt-4 text-sm text-red-700 dark:text-red-500">{signupError}</p>}
 			<div class="flex mt-4 justify-end">
 				<button
@@ -75,3 +79,8 @@ const signupError =
 		</form>
 	)
 }
+
+<script>
+	// Automatically bundles and registers the <altcha-widget> web component
+	import "altcha";
+</script>

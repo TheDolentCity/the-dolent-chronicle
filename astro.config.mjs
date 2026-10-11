@@ -16,8 +16,9 @@ export default defineConfig({
 	}),
 	integrations: [sitemap(), mdx(), react()],
 	markdown: {
-		processor: unified(),
-		remarkPlugins: [remarkReadingTime],
+		processor: unified({
+			remarkPlugins: [remarkReadingTime],
+		}),
 		shikiConfig: {
 			theme: "vitesse-dark",
 		},

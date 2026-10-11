@@ -4,6 +4,7 @@
     "prettier.printWidth": 160,
     "editor.formatOnSave": true,
     "cSpell.words": [
+        "ALTCHA",
         "Awoudan",
         "Bastionland",
         "clsx",

@@ -28,10 +28,10 @@ const themeScript = `
 `;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark" class="dark">
 	<head>
 		<BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} image={image} />
-		<script is:inline set:html={themeScript} />
+		<!-- <script is:inline set:html={themeScript} /> -->
 		<!-- Fixes Flash-Of-Unstyled-Content by requiring client-side css to load to make page visible -->
 		<style is:inline>
 			body {
@@ -46,7 +46,7 @@ const themeScript = `
 			}
 		</style>
 	</head>
-	<body class="overflow-y-scroll font-inter text-sm md:text-base bg-zinc-300 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400">
+	<body class="dark overflow-y-scroll font-inter text-sm md:text-base bg-zinc-300 dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400">
 		<main class="w-full min-h-svh px-12">
 			<slot />
 		</main>

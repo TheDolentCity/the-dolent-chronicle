@@ -5,7 +5,7 @@ published: Sep 8 2026
 image: ./a-new-dragon-game.webp
 imageAlt: "A dark, distorted, halftone image of a fortification built atop a high mountain. The text 'Rudiment, a new dragon game' is placed on the lower part of the mountain."
 caption: "Photo by Mehmet Kılınç"
-tags: [RPG, D&D 5th Edition, Rudiment, announcement, fantasy, system]
+tags: [RPG, D&D-5th-Edition, Rudiment, announcement, fantasy, system]
 ---
 
 I don't mind the dragon game that much, but I really only like playing or running it at level 1. This does not appeal to most dragon game enjoyers, so we tend to go our separate ways, only joining together for the _Mothership_ or more trad games I happen to run. But the thing is, I can _always_ get people to sign up for campaigns if I promise to use the dragon game. No matter the premise, it is far easier to get a dragon game going than it is to try and sell players on any of my own games.

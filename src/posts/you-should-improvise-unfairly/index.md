@@ -5,7 +5,17 @@ published: November 5 2026
 image: ./you-should-improvise-unfairly.webp
 imageAlt: "A dark, distorted, halftone image of shovel buried in soft earth with the text 'Improvise Unfairly'."
 caption: An edited version of a stock photo from Alfo Medeiros.
-tags: [RPG, improv, referee, technique, theory]
+tags:
+  [
+    RPG,
+    improv,
+    referee,
+    technique,
+    theory,
+    Blorb,
+    ICI-doctrine,
+    Mythic-Bastionland,
+  ]
 ---
 
 I'm a huge fan of Chris McDowall's work; not only has he created some of the most famous lightweight fantasy roleplaying games, he's also filled them with referee advice that's often missing from more mainstream games. Despite his many excellent takes, there is one line of advice in _Mythic Bastionland_ that I cannot disagree with more:

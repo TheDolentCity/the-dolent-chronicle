@@ -1,0 +1,36 @@
+---
+import { actions } from "astro:actions";
+
+const result = Astro.getActionResult(actions.auth.signInDiscord);
+if (result && !result.error && result.data.url) {
+	return Astro.redirect(result.data.url);
+}
+---
+
+<form id="signup-form">
+	<button type="submit" class="px-3 py-1 border border-zinc-500 text-sm text-zinc-100 bg-black">
+		Sign up with discord
+	</button>
+</form>
+
+{result?.error ? <div class="font-semibold text-red-500">{result.error}</div> : <span></span>}
+
+<script>
+	import { actions } from "astro:actions";
+	import { navigate } from "astro:transitions/client";
+
+	const form = document.querySelector("#signup-form") as HTMLFormElement;
+	form?.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const formData = new FormData(form);
+		const { data, error } = await actions.auth.signInDiscord(formData);
+
+		if (error) {
+			console.error("Error: ", error);
+		} else if (!data?.url) {
+			console.error("Discord URL is missing.");
+		} else {
+			navigate(data.url);
+		}
+	});
+</script>

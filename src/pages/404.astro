@@ -11,7 +11,6 @@ import { PageDescription } from "@/components/app/PageDescription";
 		<Prose>
 			<div class="flex gap-4 items-center justify-between">
 				<PageTitle>404</PageTitle>
-				<ThemeSelect client:only="react" />
 			</div>
 			<PageDescription>Page not found.</PageDescription>
 			<hr />
@@ -20,9 +19,7 @@ import { PageDescription } from "@/components/app/PageDescription";
 				title="Go to home"
 				class="group not-prose flex w-full h-96 items-center justify-center cursor-pointer rounded border border-zinc-400 dark:border-zinc-800 bg-white dark:bg-black"
 			>
-				<h1
-					class="font-garamond text-lg md:text-4xl uppercase tracking-[1rem] text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 group-hover:scale-125 lg:group-hover:scale-200 mst !duration-[1s] not:group-hover:animate-pulse"
-				>
+				<h1 class="font-garamond text-lg md:text-4xl uppercase tracking-[1rem] text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 group-hover:scale-125 lg:group-hover:scale-200 mst !duration-[1s] not:group-hover:animate-pulse">
 					Return
 				</h1>
 			</a>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Prose from "@/components/markdown/Prose.astro";
+import { PageTitle } from "@/components/app/PageTitle";
+import { PageDescription } from "@/components/app/PageDescription";
+
+export const prerender = false;
+const error = Astro.url.searchParams.get("error") ?? "Unknown server error, please try again later.";
+---
+
+<BaseLayout title="500" description="Page not found.">
+	<section class="max-w-[64rem] mx-auto pt-32 pb-16">
+		<Prose>
+			<div class="flex gap-4 items-center justify-between">
+				<PageTitle>500 Server Error</PageTitle>
+			</div>
+			<PageDescription>{error}</PageDescription>
+			<hr />
+			<a
+				href="/"
+				title="Go to home"
+				class="group not-prose flex w-full h-96 items-center justify-center cursor-pointer rounded border border-zinc-400 dark:border-zinc-800 bg-white dark:bg-black"
+			>
+				<h1 class="font-garamond text-lg md:text-4xl uppercase tracking-[1rem] text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 group-hover:scale-125 lg:group-hover:scale-200 mst !duration-[1s] not:group-hover:animate-pulse">
+					Return
+				</h1>
+			</a>
+		</Prose>
+	</section>
+</BaseLayout>

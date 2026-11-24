@@ -1,4 +1,4 @@
-export function FormattedDate({ date } : { date: Date }) {
+export function FormattedDate({ date }: { date: Date }) {
 	const dateTime = date.toISOString();
 	const localDateTime = date.toLocaleDateString("en-us", {
 		year: "numeric",

@@ -7,6 +7,8 @@ import Figure from "@/components/markdown/Figure.astro";
 import Prose from "@/components/markdown/Prose.astro";
 import { FormattedDate } from "@/components/time/FormattedDate";
 import BaseLayout from "./BaseLayout.astro";
+import SignupButton from "@/components/auth/SignupButton.astro";
+import UserProfile from "@/components/auth/UserProfile.astro";
 
 interface Props {
 	title: string;
@@ -27,13 +29,9 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 		<Prose class="mx-auto">
 			<PageHeader>
 				<PageHomeButton />
-				<PageTitle>
-					{title}
-				</PageTitle>
+				<PageTitle>{title}</PageTitle>
 			</PageHeader>
-			<PageDescription>
-				{description}
-			</PageDescription>
+			<PageDescription>{description}</PageDescription>
 			<div class="flex not-prose gap-1 lg:gap-2 mt-2 mb-4 items-center justify-start text-xs text-zinc-600 dark:text-zinc-400">
 				<a
 					data-astro-prefetch
@@ -55,15 +53,23 @@ const { title, description, published, updated, image, imageAlt, caption, minute
 			<slot />
 			<hr />
 			<p class="mt-12! italic text-sm">
-				<strong class="font-garamond font-normal text-sm lg:text-base">The Dolent Chronicle</strong> is an RPG blog produced by Dante Nardo. If you liked this post, please consider sharing it on whatever doomed planes you reside.
+				<strong class="font-garamond font-normal text-sm lg:text-base">The Dolent Chronicle</strong> is an RPG blog produced by Dante Nardo. If you liked this
+				post, please consider sharing it on whatever doomed planes you reside.
 			</p>
-			{
-				updated && (
-					<p class="italic text-sm">
-						This article was originally published <FormattedDate date={published} /> and later updated on <FormattedDate date={updated} />.
-					</p>
-				)
-			}
+			{updated && (
+				<p class="italic text-sm">
+					This article was originally published <FormattedDate date={published} /> and later updated on <FormattedDate date={updated} />.
+				</p>
+			)}
 		</Prose>
+		<div class="mx-auto">
+			<h1>Comments</h1>
+			<SignupButton />
+			<UserProfile server:defer>
+				<div slot="fallback" class="">
+					Loading user...
+				</div>
+			</UserProfile>
+		</div>
 	</article>
 </BaseLayout>

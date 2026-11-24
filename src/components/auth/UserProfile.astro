@@ -1,0 +1,20 @@
+---
+import { getDiscordUser } from "@/lib/discord";
+
+const { error, user } = await getDiscordUser(Astro.request, Astro.cookies);
+---
+
+{error ? (
+	<div class="font-semibold text-red-500">
+		<span>{error}</span>
+	</div>
+) : user ? (
+	<div class="">
+		<img src={user.avatar_url} alt={user.username} width="32" height="32" />
+		<span>Welcome, {user.username}</span>
+	</div>
+) : (
+	<div class="">
+		<span>Unknown user</span>
+	</div>
+)}
